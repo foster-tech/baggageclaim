@@ -1,0 +1,62 @@
+<!doctype html>
+{% load static %}
+<html>
+    <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <body is="dmx-app" id="passport">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="style446 col-lg-7 offset-lg-1 offset-xl-3 col-xl-6">
+                        <div class="row">
+                            <div class="col-lg-7">
+
+                                <h1 style="font-family: Montserrat; font-size: 22px;" class="style449 mt-lg-5 pt-lg-0 pl-lg-3 ml-5 pl-3">{{ user.first_name }} {{ user.last_name }}</h1>
+                                <p style="font-family: PT Serif; color: #616161;" class="style450 mb-lg-0 pl-lg-3 ml-5 pl-5">{{ user.age }} • {{ user.gender }} • {{ user.sexual_orientation }}</p>
+                                <p style="font-family: PT Serif; color: #616161;" class="style450 pl-lg-3 ml-5">City {{ user.location_city }} • State {{ user.location_state }} • Country {{ user.location_country }}</p>
+                                <p style="font-family: PT Serif; color: #616161;" class="style450 pl-lg-3 ml-5">Education level&nbsp; {{ user.education }}</p>
+                                <p style="font-family: PT Serif; color: #616161;" class="style450 pl-lg-3 ml-5">Religion {% for r in user.religion %}{{r}} {% endfor %}</p>
+                                <p style="font-family: PT Serif; color: #616161;" class="style450 pl-lg-3 ml-5">Traveling alone?&nbsp; {% for r in user.children %}{{r}} {% endfor %}</p>
+                                <p style="font-family: PT Serif; color: #616161;" class="style450 pb-lg-5 pl-lg-3 ml-5 pl-0">Destination:&nbsp;{% for r in user.destination %}{{r}} {% endfor %}</p>
+                                <p style="font-family: PT Serif; color: #616161;" class="style450 pb-lg-5 pl-lg-3 ml-5 pl-0">Stamps:&nbsp;{% for r in user.selected_stamps %}{{r}} {% endfor %}</p>
+
+                            </div>
+                            <div class="col">
+                                <img src="{% static 'image/image-1.jpg' %}" class="mt-lg-5 pt-2">
+                            </div>
+                            <div class="col-10 offset-1">
+                                <p style="font-family: PT Serif; color: #616161;" class="style450 mt-0 pt-0 mt-lg-5 mb-lg-3 pt-lg-0 pl-lg-3">The best things about being in a relationship with me are: {{ user.question1 }}</p>
+                                <p style="font-family: PT Serif; color: #616161;" class="style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">An ideal relationship consists of:&nbsp; {{ user.question2 }}</p>
+                                <p style="font-family: PT Serif; color: #616161;" class="style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">The qualities I find most irresistible are: {{ user.question3 }}</p>
+                                <p style="font-family: PT Serif; color: #616161;" class="style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">I’m still single because:&nbsp; {{ user.question4 }}</p>
+                                <p style="font-family: PT Serif; color: #616161;" class="style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3">The things that give me the greatest joy are:&nbsp; {{ user.question5 }}</p>
+                                <p style="font-family: PT Serif; color: #616161;" class="style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">The most important thing to know about me before we meet is: {{ user.question6 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="style447 col-lg-2">
+                        <div class="row">
+                            <div class="col-12">
+                                {% if match == 5 %}
+                                <img src="{% static 'image/air5.png' %}" class="img-fluid">
+                                {% elif match == 4 %}
+                                <img src="{% static 'image/air4.png' %}" class="img-fluid">
+                                {% elif match == 3 %}
+                                <img src="{% static 'image/air3.png' %}" class="img-fluid">
+                                {% elif match == 2 %}
+                                <img src="{% static 'image/air2.png' %}" class="img-fluid">
+                                {% elif match == 1 %}
+                                <img src="{% static 'image/air1.png' %}" class="img-fluid">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="{% static 'bootstrap/4/js/popper.min.js' %}"></script>
+        <script src="{% static 'bootstrap/4/js/bootstrap.min.js' %}"></script>
+    </body>
+
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+{% load static %}
+<html>
+    <head>
+        <base href="/">
+        <meta charset="UTF-8">
+        <title>Baggage Claim 1 - Lifestyle</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+
+    <body is="dmx-app" id="free_profile">
+
+        {% include "header.html" %}
+        {% block content %}
+        <section class="style167 w-auto">
+            <div class="container style166 text-center h-auto w-auto">
+                <img src="{% static 'image/lifestyle.png' %}" class="style242 mt-0">
+            </div>
+            <div class="container">
+                <p style="font-family: Montserrat;">Some truths to remember before you begin:</p>
+                <p style="font-family: Montserrat; font-size: 1rem;">Being honest and authentic with ourselves will attract an honest and authentic connection. There are no wrong answers.</p>
+                <p style="font-family: Montserrat;">Most baggage, if paired with the right match, is actually not so heavy. What once made your ex run, may very well make the right person stay.</p>
+                <p style="font-family: Montserrat;">You’re never too flawed for someone to love. There is someone for everyone.</p>
+                <p style="font-family: Montserrat;" class="style294 mb-5">Complete Baggage Claims in order to get matches that are compatible with you. The more Claims you complete, the deeper of a connection you’ll find.</p>
+
+                <div class="row">
+                    <div class="col">
+                        <h1 style="font-family: Montserrat; font-size: 28px;" class="style334">Baggage Claim 1: Lifestyle</h1>
+                    </div>
+                    <form class="col-12 style204" method="post">
+                        {% csrf_token %}
+
+                        <div class="form-group style454">
+
+                            <legend class="col-form-label style459">My kids control my life. Good luck.</legend>
+                            {{ form.Q1A }}
+                            <legend class="col-form-label style459">I can’t go near children. I don’t ever want them - sorry for bursting your ideal family bubble.  </legend>
+                            {{ form.Q2A }}
+                            <legend class="col-form-label style459">I love kids, but don’t want any of my own. I could play step parent if need be.</legend>
+                            {{ form.Q3A }}
+                            <legend class="col-form-label style459">I give my pet more attention than my partner.</legend>
+                            {{ form.Q4A }}
+                            <legend class="col-form-label style459">I believe in ethical non-monogamy.</legend>
+                            {{ form.Q5A }}
+                            <legend class="col-form-label style459">I don’t believe in or want marriage and will never change my mind. No matter how much we love each other, no means no.  </legend>
+                            {{ form.Q6A }}
+                            <legend class="col-form-label style459">I’m a clean freak, classic Type A. I will truly be irritated if the house is not kept clean/organized.</legend>
+                            {{ form.Q7A }}
+                            <legend class="col-form-label style459">I’m extremely messy and I can’t change it, so don’t bother trying to train me.</legend>
+                            {{ form.Q8A }}
+                            <legend class="col-form-label style459">I’m not financially motivated because as long as my basic needs are met, I am content.</legend>
+                            {{ form.Q9A }}
+                            <legend class="col-form-label style459">My partner will often feel that he/she has to compete with my friends for my attention and time.</legend>
+                            {{ form.Q10A }}
+                            <legend class="col-form-label style459">I enjoy doing non-legalized drugs recreationally.</legend>
+                            {{ form.Q11A }}
+                            <legend class="col-form-label style459">I enjoy doing non-legalized drugs often and it’s a big part of my life.</legend>
+                            {{ form.Q12A }}
+                            <legend class="col-form-label style459">I am a cigarette smoker. The smell isn’t that bad, I promise!</legend>
+                            {{ form.Q13A }}
+                            <legend class="col-form-label style459">I’m a messy eater and sometimes will lick the food off of my fingers.</legend>
+                            {{ form.Q14A }}
+                            <legend class="col-form-label style459">I don’t put a lot of effort into my clothing. Comfort is key, and the rest is superficial stuff.</legend>
+                            {{ form.Q15A }}
+                            <legend class="col-form-label style459">When it comes to personal hygiene, I enjoy getting away with the minimum.</legend>
+                            {{ form.Q16A }}
+                            <legend class="col-form-label style459">I often prioritize video games, social media or tv in my free time.</legend>
+                            {{ form.Q17A }}
+                            <legend class="col-form-label style459">I have a medical condition that I’m careful not to transmit to my sexual partners.</legend>
+                            {{ form.Q18A }}
+                            <legend class="col-form-label style459">I prioritize the opinion of my family. What they think about my relationship really impacts me.</legend>
+                            {{ form.Q19A }}
+                            <legend class="col-form-label style459">You could say I’m a mama’s boy/daddy’s girl.</legend>
+                            {{ form.Q20A }}
+                            <legend class="col-form-label style459">My sex equipment down there is not known to be the biggest which has caused some sexual dissatisfaction in the past but I can compensate with technique.</legend>
+                            {{ form.Q21A }}
+                            <legend class="col-form-label style459">I can’t date someone who is:</legend>
+                            {{ form.Q22A }}
+                            <legend class="col-form-label style459">I am</legend>
+                            {{ form.Q23A}}
+                            <legend class="col-form-label style459">When it comes to money, I’m frugal. Spending gives me anxiety.</legend>
+                            {{ form.Q24A }}
+                            <legend class="col-form-label style459">When it comes to money, I’m too “spendy” and don’t have limits.</legend>
+                            {{ form.Q25A }}
+                            <legend class="col-form-label style459">When it comes to pets, I’m picky. I’m not comfortable with (select all that apply):</legend>
+                            {{ form.Q26A }}
+                            <legend class="col-form-label style459">I typically eliminate romantic partners if their social or political views don’t align with mine and are any of the
+following (select all that apply):</legend>
+                            {{ form.Q27A }}
+                            <legend class="col-form-label style459">My religious views get in the way of a relationship unless my partner shares the same views or decides to convert (check all that are acceptable).</legend>
+                            {{ form.Q28A }}
+                        </div>
+                        <div class="col text-center style239">
+                            <button class="btn style241 active" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Baggage Claim 1</button>
+                            <button class="btn style241 active" type="submit">Baggage Claim 2</button>
+                            <button class="btn style241 disabled">Baggage Claim 3</button>
+                            <button class="btn style241 disabled">Baggage Claim 4</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        {% endblock %}
+
+        {% include "footer.html" %}
+        <script src="{% static 'bootstrap/4/js/popper.min.js' %}"></script>
+        <script src="{% static 'bootstrap/4/js/bootstrap.min.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,315 @@
+<!doctype html>
+{% load static %}
+<html>
+
+    <head>
+        <base href="/">
+        <meta charset="UTF-8">
+        <title>Free Profile</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <script src="{% static 'dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js' %}" defer=""></script>
+        <script src="{% static 'dmxAppConnect/dmxBackgroundVideo/dmxBackgroundVideo.js' %}" defer=""></script>
+        <script src="{% static 'dmxAppConnect/dmxBrowser/dmxBrowser.js' %}" defer=""></script>
+    </head>
+
+    <body is="dmx-app" id="free_profile">
+        <div is="dmx-browser" id="browser1"></div>
+
+        {% include "header.html" %}
+
+        <section class="style167">
+            <div class="container style166">
+                <img src="{% static 'image/passport.png' %}" class="img-fluid">
+            </div>
+            <div class="container style165">
+                <div class="row">
+                    <div class="col">
+                        <form id="form1">
+
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <div class="form-group style203">
+                                        <label for="input1" class="style169">• Age: 18+</label>
+                                        <input type="text" class="form-control style170" id="input1" name="input1" aria-describedby="input1_help">
+                                        <small id="input1_help" class="form-text text-muted style171"></small>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 style204">
+                                    <div class="form-group">
+                                        <label for="input2" class="style177">• Gender:&nbsp;</label>
+                                        <div class="custom-control custom-radio style172">
+                                            <input class="custom-control-input" type="radio" value="" id="radio4" name="gender">
+                                            <label class="custom-control-label" for="radio4">Male</label>
+                                        </div>
+                                        <div class="custom-control custom-radio style173">
+                                            <input class="custom-control-input" type="radio" value="" id="radio3" name="gender">
+                                            <label class="custom-control-label" for="radio3" style="font-family: PT serif;">Female&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+                                        </div>
+                                        <div class="custom-control custom-radio style174">
+                                            <input class="custom-control-input" type="radio" value="" id="radio2" name="gender">
+                                            <label class="custom-control-label" for="radio2" style="font-family: PT serif;">Non-binary</label>
+                                        </div>
+                                        <div class="custom-control custom-radio style175">
+                                            <input class="custom-control-input" type="radio" value="" id="radio1" name="gender">
+                                            <label class="custom-control-label" for="radio1" style="font-family: PT serif;">Female Transgender</label>
+                                        </div>
+                                        <div class="custom-control custom-radio style176">
+                                            <input class="custom-control-input" type="radio" value="" id="radio5" name="gender">
+                                            <label class="custom-control-label style183" for="radio5" style="font-family: PT serif;">Male Transgender</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="input3" class="style177">• Sexual Orientation:&nbsp;</label>
+                                        <div class="custom-control custom-radio style172">
+                                            <input class="custom-control-input" type="radio" value="" id="radio6" name="sexual">
+                                            <label class="custom-control-label" for="radio6">&nbsp;Straight</label>
+                                        </div>
+                                        <div class="custom-control custom-radio style173">
+                                            <input class="custom-control-input" type="radio" value="" id="radio7" name="sexual">
+                                            <label class="custom-control-label" for="radio7" style="font-family: PT serif;">&nbsp;Gay&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
+                                        </div>
+                                        <div class="custom-control custom-radio style174">
+                                            <input class="custom-control-input" type="radio" value="" id="radio8" name="sexual">
+                                            <label class="custom-control-label" for="radio8" style="font-family: PT serif;">Lesbian&nbsp;</label>
+                                        </div>
+                                        <div class="custom-control custom-radio style175">
+                                            <input class="custom-control-input" type="radio" value="" id="radio9" name="sexual">
+                                            <label class="custom-control-label" for="radio9" style="font-family: PT serif;">Bisexual&nbsp;</label>
+                                        </div>
+                                        <div class="custom-control custom-radio style176">
+                                            <input class="custom-control-input" type="radio" value="" id="radio10" name="sexual">
+                                            <label class="custom-control-label" for="radio10" style="font-family: PT serif;">Pansexual&nbsp;</label>
+                                        </div>
+                                        <div class="custom-control custom-radio style176">
+                                            <input class="custom-control-input" type="radio" value="" id="radio11" name="sexual">
+                                            <label class="custom-control-label" for="radio11" style="font-family: PT serif;">Queer</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <p style="font-family: PT serif;" class="style182 mt-md-4">• Location:</p>
+                                    <div class="form-group style178">
+                                        <label for="input2" class="style169">City:&nbsp;</label>
+                                        <input type="text" class="form-control style170" id="input2" name="input2" aria-describedby="input1_help">
+                                        <small id="input1_help1" class="form-text text-muted style171"></small>
+                                    </div>
+                                    <div class="form-group style179">
+                                        <label for="input3" class="style169">State:&nbsp;</label>
+                                        <input type="text" class="form-control style170" id="input3" name="input3" aria-describedby="input1_help">
+                                        <small id="input1_help2" class="form-text text-muted style171"></small>
+                                    </div>
+                                    <div class="form-group style180">
+                                        <label for="input4" class="style169">Country:</label>
+                                        <input type="text" class="form-control style170" id="input4" name="input4" aria-describedby="input1_help">
+                                        <small id="input1_help3" class="form-text text-muted style171"></small>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="input4" class="style177">• Education level:&nbsp;</label>
+                                        <div class="custom-control custom-radio style172">
+                                            <input class="custom-control-input" type="radio" value="" id="radio12" name="education">
+                                            <label class="custom-control-label" for="radio12">&nbsp;High School&nbsp;</label>
+                                        </div>
+                                        <div class="custom-control custom-radio style173">
+                                            <input class="custom-control-input" type="radio" value="" id="radio13" name="education">
+                                            <label class="custom-control-label" for="radio13" style="font-family: PT serif;">Trade School</label>
+                                        </div>
+                                        <div class="custom-control custom-radio style174">
+                                            <input class="custom-control-input" type="radio" value="" id="radio14" name="education">
+                                            <label class="custom-control-label" for="radio14" style="font-family: PT serif;">&nbsp;Some College&nbsp;</label>
+                                        </div>
+                                        <div class="custom-control custom-radio style175">
+                                            <input class="custom-control-input" type="radio" value="" id="radio15" name="education">
+                                            <label class="custom-control-label" for="radio15" style="font-family: PT serif;">Undergraduate Degree&nbsp;</label>
+                                        </div>
+                                        <div class="custom-control custom-radio style176">
+                                            <input class="custom-control-input" type="radio" value="" id="radio16" name="education">
+                                            <label class="custom-control-label style184" for="radio16" style="font-family: PT serif;">Graduate Degree</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="style451 col-md-9 col-lg-8 col-xl-6 col-sm-11">
+                                    <img class="style205" src="{% static 'image/photo_prof3.png' %}">
+                                </div>
+                                <div class="w-auto h-auto col-lg-12 col-12">
+                                    <div class="form-group">
+                                        <label for="input2" class="style177">• Religion:
+                                            Select all that apply</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input style185" type="checkbox" value="" id="input5" name="input5">
+                                            <label class="form-check-label" for="input5" style="font-family: PT serif;">Catholic&nbsp; &nbsp; &nbsp;</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input style185" type="checkbox" value="" id="input6" name="input6">
+                                            <label class="form-check-label" for="input6" style="font-family: PT serif;">Christian&nbsp; &nbsp; &nbsp;&nbsp;</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input style186" type="checkbox" value="" id="input7" name="input7">
+                                            <label class="form-check-label" for="input7" style="font-family: PT serif;">Orthodox Jewish</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input style187" type="checkbox" value="" id="input8" name="input8">
+                                            <label class="form-check-label" for="input8" style="font-family: PT serif;">Non-orthodox Jewish&nbsp;</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input style188" type="checkbox" value="" id="input9" name="input9">
+                                            <label class="form-check-label" for="input9" style="font-family: PT serif;">Buddhist&nbsp;</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input style189" type="checkbox" value="" id="input10" name="input10">
+                                            <label class="form-check-label" for="input10" style="font-family: PT serif;">Mormon&nbsp;</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input style190" type="checkbox" value="" id="input11" name="input11">
+                                            <label class="form-check-label" for="input11" style="font-family: PT serif;">Hindu&nbsp;</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input style191" type="checkbox" value="" id="input12" name="input12">
+                                            <label class="form-check-label" for="input12" style="font-family: PT serif;">Sikh&nbsp;</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input style192" type="checkbox" value="" id="input13" name="input13">
+                                            <label class="form-check-label" for="input13" style="font-family: PT serif;">Atheist&nbsp;</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input style193" type="checkbox" value="" id="input14" name="input14">
+                                            <label class="form-check-label" for="input14" style="font-family: PT serif;">Agnostic</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input style194" type="checkbox" value="" id="input15" name="input15">
+                                            <label class="form-check-label" for="input15" style="font-family: PT serif;">Muslim&nbsp; &nbsp;</label>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="input2" class="style177">Are you traveling alone?&nbsp;</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input style185" type="checkbox" value="" id="input16a" name="input16a">
+                                            <label class="form-check-label" for="input16" style="font-family: PT serif;">A. No children&nbsp; &nbsp;</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input style185" type="checkbox" value="" id="input16b" name="input16b">
+                                            <label class="form-check-label" for="input16" style="font-family: PT serif;">B. Small children&nbsp;</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input style186" type="checkbox" value="" id="input16c" name="input16c">
+                                            <label class="form-check-label" for="input16" style="font-family: PT serif;">C. Pre-teen/Teen children</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input style187" type="checkbox" value="" id="input16d" name="input16d">
+                                            <label class="form-check-label" for="input16" style="font-family: PT serif;">D. Adult children&nbsp; &nbsp; &nbsp; &nbsp;</label>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="input2" class="style177">Choose your destination:</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input style185" type="checkbox" value="" id="input17a" name="input17a">
+                                            <label class="form-check-label" for="input17" style="font-family: PT serif;">A. Relationship&nbsp; &nbsp; &nbsp;</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input style185" type="checkbox" value="" id="input17b" name="input17b">
+                                            <label class="form-check-label" for="input17" style="font-family: PT serif;">B. Something casual</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input style186" type="checkbox" value="" id="input17c" name="input17c">
+                                            <label class="form-check-label" for="input17" style="font-family: PT serif;">C. I don’t know yet&nbsp;</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input style187" type="checkbox" value="" id="input17d" name="input17d">
+                                            <label class="form-check-label" for="input17" style="font-family: PT serif;">D. Marriage&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-12">
+
+                                    <p style="font-family: pt serif;">Now is your chance to share more about what makes you unique:</p>
+                                    <div class="form-group">
+                                        <label for="input18" style="font-family: PT serif;">1. The best things about being in a relationship with me are:</label>
+                                        <textarea id="text1" class="form-control" style="background-color: #66c5b5; height: 170px;"></textarea>
+
+                                        <small id="input18_help" class="form-text text-muted"></small>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="input19" style="font-family: PT serif;">2. An ideal relationship consists of:&nbsp;</label>
+                                        <textarea id="text2" class="form-control" style="background-color: #66c5b5; height: 170px;"></textarea>
+
+                                        <small id="input18_help1" class="form-text text-muted"></small>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="input20" style="font-family: PT serif;">3. The qualities I find most irresistible are:</label>
+                                        <input type="text" class="form-control style196" id="input20" name="input20" aria-describedby="input18_help">
+                                        <small id="input18_help2" class="form-text text-muted"></small>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="input21" style="font-family: PT serif;">4. I’m still single because:&nbsp;</label>
+                                        <textarea id="text3" class="form-control" style="background-color: #66c5b5; height: 170px;"></textarea>
+
+                                        <small id="input18_help3" class="form-text text-muted"></small>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="input22" style="font-family: PT serif;">5. The things that give me the greatest joy are:&nbsp;</label>
+                                        <textarea id="text4" class="form-control" style="background-color: #66c5b5; height: 170px;"></textarea>
+
+                                        <small id="input18_help4" class="form-text text-muted"></small>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="input23" style="font-family: PT serif;">6. The most important thing to know about me before we meet is:</label>
+                                        <textarea id="text5" class="form-control" style="background-color: #66c5b5; height: 170px;"></textarea>
+                                        <small id="input18_help5" class="form-text text-muted"></small>
+                                    </div>
+                                </div>
+                                <div class="text-right style199 col-lg-8 col-xl-9">
+                                    <p style="" class="style198 text-center">You’re off to a great start! Complete a Baggage Claim in order to match.&nbsp;</p>
+                                </div>
+                                <div class="col text-right style199 offset-lg-4">
+                                    <button id="btn2" class="btn style197 mb-lg-5 mb-md-5 mb-sm-5 mb-5" style="display: inline-block;">Submit</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% include "footer.html" %}
+        <script src="{% static 'bootstrap/4/js/popper.min.js' %}"></script>
+        <script src="{% static 'bootstrap/4/js/bootstrap.min.js' %}"></script>
+    </body>
+
+</html>

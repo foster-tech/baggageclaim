@@ -1,0 +1,62 @@
+<!doctype html>
+{% load static %}
+<html>
+
+    <head>
+        <base href="/">
+        <meta charset="UTF-8">
+        <title>Register</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+
+    <body is="dmx-app" id="loginb">
+
+        {% include "header.html" %}
+
+        <section>
+            <div class="row">
+                <div class="col text-center">
+                    <img src="{% static 'image/login.png' %}" class="img-fluid">
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="row justify-content-center">
+                <form class="form-group text-center" method="post">
+                    {% csrf_token %}
+                    <label class="style306 col-form-label-lg mt-3" style="font-family: montserrat; font-size: 23px;">USER REGISTRATION</label>
+                    <legend class="col-form-label style308" style="font-family: montserrat;">WELCOME BACK</legend>
+                    {% for error in form.email.errors %}
+                    <p style="color: red">{{ error }}</p>
+                    {% endfor %}
+                    <input type="text" class="form-control style287 mb-4" id="email" name="email" placeholder="E-mail">
+                    {% for error in form.username.errors %}
+                    <p style="color: red">{{ error }}</p>
+                    {% endfor %}
+                    <input type="text" class="form-control style287 mb-4" id="username" name="username" placeholder="Username">
+                    {% for error in form.password1.errors %}
+                    <p style="color: red">{{ error }}</p>
+                    {% endfor %}
+                    <input type="password" class="form-control style287 mb-2" id="password1" name="password1" placeholder="Password">
+                    {% for error in form.password2.errors %}
+                    <p style="color: red">{{ error }}</p>
+                    {% endfor %}
+                    <input type="password" class="form-control style287 mb-0" id="password2" name="password2" placeholder="Confirm Password">
+                    <div class="form-check style445"></div>
+                    
+                    <button id="btn4" class="btn style309 mt-3" style="" data-toggle="button" type="submit">CREATE AN ACCOUNT</button>
+
+                </form>
+            </div>
+        </section>
+
+        {% include "footer.html" %}
+        <script src="{% static 'bootstrap/4/js/popper.min.js' %}"></script>
+        <script src="{% static 'bootstrap/4/js/bootstrap.min.js' %}"></script>
+    </body>
+
+</html>

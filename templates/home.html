@@ -1,0 +1,349 @@
+<!doctype html>
+{% load static %}
+
+<html>
+    <head>
+        <base href="/">
+        <meta charset="UTF-8">
+        <title>BAGGAGE CLAIM</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+
+    <body is="dmx-app" id="index" class="style5">
+        {% include "header.html" %}
+
+        <section class="text-center style43">
+            <div class="container">
+                <img src="{% static 'image/casal01_entrada2.jpg' %}" class="img-fluid d-sm-none">
+            </div>
+            <img src="{% static 'image/casal01_entrada.jpg' %}" class="img-fluid d-none d-sm-inline">
+        </section>
+        <section class="style79">
+            <div class="row">
+                <div class="col">
+                    <h1 class="title1b text-center text-sm-center text-md-center text-lg-center text-xl-center pt-4 pb-4" id="title1b" >What if you could get all,<br>of the heavy stuff out of the
+                        way,<br>before you
+                        even meet?</h1>
+                </div>
+            </div>
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+        </section>
+
+
+        <section class="d-none d-lg-block d-xl-none style142">
+            <div class="style91 container-fluid style91b">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p style="font-family: PT Serif; color: #bcbec0; font-size: 14pt;" class="style413"><br><br>Baggage claim purposely filters<br>out incompatible flaws in the beginning <br>of your matching experience! No more feeling<br> like
+                        dating is a blind risk, or a shallow promise<br> that doesn’t deliver. Baggage Claim lets<br>you know what you’re getting into,<br> so that you can focus on connections<br> that offer compatibility and<br> long-term
+                        potential.&nbsp;</p>
+                    </div>
+                    {% if not user.is_authenticated %}
+                    <div class="col">
+                        <a href="login.php" class="btn style412" style="font-size: 12pt; color: #7f6918;">Set Up My Free Profile</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <button id="btn4" class="btn style92 style92b style92d"></button>
+            </div>
+
+        </section>
+        <section class="d-none d-xl-block">
+            <div class="style91 container-fluid">
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <p style="font-family: PT Serif; color: #bcbec0; font-size: 14pt;" class="style413"><br><br><br><br>Baggage claim purposely filters<br>out incompatible flaws in the beginning <br>of your matching experience! No more feeling<br>
+                        like dating is a blind risk, or a shallow promise<br> that doesn’t deliver. Baggage Claim lets<br>you know what you’re getting into,<br> so that you can focus on connections<br> that offer compatibility and<br> long-term
+                        potential.&nbsp;</p>
+                    </div>
+                    {% if not user.is_authenticated %}
+                    <div class="col-xl-12">
+                        <a href="{% url 'login' %}" class="btn style412" style="font-family: PT Serif; font-size: 12pt; color: #7f6918;">Set Up My Free Profile</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+        </section>
+        <section class="d-lg-none">
+            <div class="style93 container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p style="font-family: PT Serif; color: #bcbec0; font-size: 10pt;"><br>Baggage claim purposely filters<br>out incompatible flaws in the beginning <br>of your matching experience! No more feeling<br> like dating is a blind risk,
+                        or a shallow promise<br> that doesn’t deliver. Baggage Claim<br> lets you know what you’re getting <br>into, so that you can <br>focus on connections<br> that offer compatibility<br> and long-term potential.&nbsp;</p>
+                    </div>
+                    {% if not user.is_authenticated %}
+                    <div class="col">
+                        <a href="{% url 'login' %}" class="btn style412" style="font-family: PT Serif; font-size: 9pt; color: #7f6918;">Set Up My Free Profile</a>
+                    </div>
+                    {% endif %}
+                </div>
+
+            </div>
+        </section>
+
+        <section class="style10 d-none d-sm-block">
+            <div class="container wappler-block pt-4 pb-4 style20">
+                <div class="row style12 row-cols-7">
+                    <div class="mb-4 col-sm-6 col-md-4 style13 offset-0 col-12">
+                        <img class="wappler-type-picture mt-4 w-75" src="{% static 'image/tag1.png' %}">
+                    </div>
+                    <div class="mb-4 col-md-4 style15 col-sm-6 offset-sm-0 col-12 offset-0"><img class="wappler-type-picture w-75 mt-4 style14" src="{% static 'image/tag2.png' %}">
+                    </div>
+                    <div class="mb-4 col-sm-6 col-md-4 style16 col-12 offset-0"><img class="wappler-type-picture w-75 mt-4" src="{% static 'image/tag3.png' %}">
+                    </div>
+                    <div class="mb-4 col-sm-6 col-md-4 style19 col-12 offset-0"><img class="wappler-type-picture w-75 mt-4" src="{% static 'image/tag4.png' %}">
+                    </div>
+                    <div class="mb-4 col-sm-6 col-md-4 style18 col-12 offset-0"><img class="wappler-type-picture w-75 mt-4" src="{% static 'image/tag5.png' %}">
+                    </div>
+                    <div class="mb-4 col-sm-6 col-md-4 style17 col-12 offset-0"><img class="wappler-type-picture w-75 mt-4" src="{% static 'image/tag6.png' %}">
+                    </div>
+                    <div class="col style22">
+                        <a href="{% url 'claim1' %}" class="btn style301" style="font-family: PT Serif; font-size: 14pt; color: #7f6918;">Get Started </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="style117 d-none d-xl-block">
+            <div class="style123 container">
+                <h1 class="style112">People can only meet youas deeply as they've met themselves.</h1>
+                <h1 class="style113">Baggage Claim matches romantic partners based upon the compatibility of their imperfections&nbsp;</h1>
+                <p class="style114">The better you know yourself - flaws included - the higher your chances are at finding your right match. Having complementary baggage means that although disagreements inevitably happen, the good will tend to
+                outweigh the
+                bad. Baggage Claim matches are made with long-term success in mind, because love thrives on core compatibility.&nbsp;</p>
+                <a href="{% url 'concept'  %}" class="btn style115">Learn more</a>
+            </div>
+
+        </section>
+        <section class="style110 d-none d-lg-block d-xl-none">
+            <div class="container">
+                <div class="row">
+                    <div class="col style109 style109b">
+                        <h1 class="style105">People can only meet youas deeply as they've met
+                            themselves.</h1>
+                        <h1 style="" class="style107">Baggage Claim matches romantic
+                            partners based upon the compatibility
+                            of their imperfections&nbsp;</h1>
+                        <p class="style108">The better you know yourself - flaws
+                        included - the higher your chances are
+                        at finding your right match. Having
+                        complementary baggage means that
+                        although disagreements inevitably happen,
+                        the good will tend to outweigh the bad.
+                        Baggage Claim matches are made with
+                        long-term success in mind, because love
+                        thrives on core compatibility.&nbsp;&nbsp;</p>
+                        <a href="{% url 'concept'  %}" class="btn style111
+                                 ">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="style110 d-none d-sm-block d-md-none">
+            <div class="container">
+                <div class="row">
+                    <div class="col style109">
+                        <h1 class="style105">People can only meet youas deeply as they've met
+                            themselves.</h1>
+                        <h1 style="" class="style107">Baggage Claim matches romantic
+                            partners based upon the compatibility
+                            of their imperfections&nbsp;</h1>
+                        <p class="style108">The better you know yourself - flaws
+                        included - the higher your chances are
+                        at finding your right match. Having
+                        complementary baggage means that
+                        although disagreements inevitably happen,
+                        the good will tend to outweigh the bad.
+                        Baggage Claim matches are made with
+                        long-term success in mind, because love
+                        thrives on core compatibility.&nbsp;&nbsp;</p>
+                        <a href="{% url 'concept'  %}" class="btn style111">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="style110 d-none d-md-block d-lg-none">
+            <div class="container">
+                <div class="row">
+                    <div class="col style109">
+                        <h1 class="style105">People can only meet youas deeply as they've met
+                            themselves.</h1>
+                        <h1 style="" class="style107">Baggage Claim matches romantic
+                            partners based upon the compatibility
+                            of their imperfections&nbsp;</h1>
+                        <p class="style108">The better you know yourself - flaws
+                        included - the higher your chances are
+                        at finding your right match. Having
+                        complementary baggage means that
+                        although disagreements inevitably happen,
+                        the good will tend to outweigh the bad.
+                        Baggage Claim matches are made with
+                        long-term success in mind, because love
+                        thrives on core compatibility.&nbsp;&nbsp;</p>
+                        <a href="{% url 'concept'  %}" class="btn style111">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="d-sm-none style103 mb-5">
+            <div class="container">
+                <div class="row row-cols-7">
+
+                    <div class="mt-5 style102 w-auto col-6 offset-0 h-25">
+                        <img src="{% static 'image/tag1.png' %}" class="style96 h-auto w-100">
+                    </div>
+                    <div class="col-6 h-25 mt-5">
+                        <img src="{% static 'image/tag2.png' %}" class="style97 w-100">
+                    </div>
+                    <div class="mt-5 h-25 col-6">
+                        <img src="{% static 'image/tag3.png' %}" class="style98 w-100">
+                    </div>
+                    <div class="col-6 mt-5 h-25">
+                        <img src="{% static 'image/tag4.png' %}" class="style99 w-100">
+                    </div>
+                    <div class="mt-5 h-25 col-6">
+                        <img src="{% static 'image/tag5.png' %}" class="style100 w-100">
+                    </div>
+                    <div class="col-6 mt-5 h-25">
+                        <img src="{% static 'image/tag6.png' %}" class="style101 w-100">
+                    </div>
+                    <div class="col text-center mb-5 style416">
+                        <a href="{% url 'login' %}" class="btn style415"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="d-sm-none">
+            <div class="container">
+                <div class="row">
+                    <div class="col style122">
+                        <h1 class="style118">People can only meet youas deeply as they've met themselves.</h1>
+                        <h1 class="style119">Baggage Claim matches romantic partners based upon the compatibility of their imperfections&nbsp;</h1>
+                        <p class="style120">The better you know yourself - flaws included - the higher your chances are at finding your right match. Having complementary baggage means that although disagreements inevitably happen, the good will tend
+                        to outweigh the bad. Baggage Claim matches are made with long-term success in mind, because love thrives on core compatibility.&nbsp;&nbsp;</p>
+                        <a href="{% url 'concept'  %}" class="btn style121">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Tenor+Sans&display=swap" rel="stylesheet">
+
+        <section class="style133">
+            <h1 class="style23 pt-sm-4 pt-lg-5 pt-3 pl-5 pr-5">A more scientific approach to dating.</h1>
+        </section>
+        <section class="d-md-none">
+            <div class="container w-auto">
+                <div class="row row-cols-7 w-auto">
+                    <div class="col text-center">
+                        <img class="w-auto h-auto style135" src="{% static 'image/casal04aa.jpg' %}">
+                    </div>
+                    <div class="col-12 style136">
+                        <p class="style134">Most dating websites throw hundreds of matches aimlessly your way. If we want to date like primates, we can rely mainly on physical appearance and first impressions. However, this does not promote long-term
+                        relationship compatibility.&nbsp;</p>
+                    </div>
+                    <div class="col text-center">
+                        <img src="{% static 'image/casal04bb.jpg' %}">
+                    </div>
+                    <div class="col-12 style138">
+                        <p class="style137">Baggage Claim’s algorithm evaluates the strength of matches based on 89 different criteria. Using objective weighting methodology, it allows users to easily apply what the principles of psychological
+                        dynamics and the science of relationships have revealed.&nbsp;</p>
+                    </div>
+                    <div class="col text-center">
+                        <img src="{% static 'image/casal04c2.jpg' %}" class="style298">
+                    </div>
+                    <div class="style140 col-12">
+                        <p class="style139">Created by a licensed marriage and family therapist, an expert dating coach, and a human dynamics/emotional intelligence researcher, Baggage Claim applies years of evidence-based research to maximize the
+                        success of dating.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mb-0 style131 d-none d-md-block d-lg-none">
+            <div class="row row-cols-md-3">
+                <div class="col-md offset-md-0 col-sm-6">
+                    <img src="{% static 'image/casal04a.jpg' %}" class="w-100">
+                </div>
+                <div class="col-sm-6">
+                    <img src="{% static 'image/casal04b.jpg' %}" class="w-100">
+
+                </div>
+                <div class="offset-md-0 col-md-4 col-sm-6"><img src="{% static 'image/casal04c2.jpg' %}" class="w-100 style297"></div>
+                <div class="col">
+                    <p class="style124">Most dating websites throw hundreds of matches aimlessly your way. If we want to date like primates, we can rely mainly on physical appearance and first impressions. However, this does not promote long-term
+                    relationship compatibility.&nbsp;</p>
+                </div>
+                <div class="col">
+                    <p class="style125 mb-md-0 pb-md-0">Baggage Claim’s algorithm evaluates the strength of matches based on 89 different criteria. Using objective weighting methodology, it allows users to easily apply what the principles of
+                    psychological dynamics and the science of relationships have revealed.&nbsp;</p>
+                </div>
+                <div class="col">
+                    <p class="style126">Created by a licensed marriage and family therapist, an expert dating coach, and a human dynamics/emotional intelligence researcher, Baggage Claim applies years of evidence-based research to maximize the
+                    success of dating.</p>
+                </div>
+            </div>
+        </section>
+        <section class="style132 d-none d-lg-block">
+            <div class="container wappler-block pt-4 pb-4">
+                <div class="row">
+                    <div class="col-12 offset-sm-2 offset-md-0 col-md-4 col-sm-7 style127">
+                        <img class="wappler-type-picture mb-3 style24 img-fluid w-auto h-75" height="200" src="{% static 'image/casal04a.jpg' %}">
+                        <p class="style81 style78 pr-3" style="font-family: 'PT', serif;">Most dating websites throw hundreds of matches aimlessly your way. If we want to date like primates, we can rely
+                        mainly on physical appearance and first impressions. However, this does not promote long-term relationship compatibility.&nbsp;</p>
+                    </div>
+                    <div class="col-12 col-sm-8 offset-sm-2 offset-md-0 col-md-4 style128">
+                        <img class="wappler-type-picture mb-3 style25 img-fluid w-auto h-75" height="200" src="{% static 'image/casal04b.jpg' %}">
+                        <p class="style81 style79 pr-4" style="font-family: 'PT', serif;">Baggage Claim’s algorithm evaluates
+                        the strength of matches based on 89 different criteria. Using objective weighting methodology, it allows users to easily apply what the principles of psychological dynamics and the science of relationships have
+                        revealed.&nbsp;</p>
+                    </div>
+                    <div class="col-12 col-sm-8 offset-sm-2 offset-md-0 col-md-4 style129">
+                        <img class="wappler-type-picture mb-3 style26 img-fluid w-auto h-75" height="180" src="{% static 'image/casal04c2.jpg' %}">
+                        <p class="style81 style79 pr-xl-4" style="font-family: 'PT', serif;">Created by a licensed marriage and family therapist, an expert dating coach, and a human dynamics/emotional intelligence researcher, Baggage Claim applies
+                        years of
+                        evidence-based research to maximize the
+                        success of dating.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="d-none d-lg-block">
+            <div class="style56 container-fluid text-md-center">
+                <h1 class="text-center style49">Everyone has some form of baggage.</h1>
+                <p class="style50">Nobody’s perfect. Being flawed is a natural part of being human. These flaws are the baggage that<br> we carry into each relationship. The strongest relationships are successful not because of what<br> partnershave
+                in
+                common,
+                but because.&nbsp;</p>
+                <a href="{% url 'login' %}" class="btn style57" style="font-family: PT Serif; font-size: 18pt; color: #7f6918;">Sign Up</a>
+            </div>
+
+        </section>
+        <section class="d-lg-none">
+            <div class="style144 container-fluid text-md-center text-center">
+
+                <h1 class="text-center style49 style49b text-sm-center">Everyone has some form of baggage.</h1>
+                <p class="style50 style50b text-sm-center">Nobody’s perfect. Being flawed is a natural part of being human. These flaws are the baggage that we carry into each relationship. The strongest relationships are successful not because of
+                what
+                partnershave in
+                common,
+                but because.&nbsp;</p><a href="{% url 'login' %}" class="btn style414" style="font-family: PT Serif; font-size: 16pt; color: #7f6918;">Sign Up</a>
+
+            </div>
+
+
+        </section>
+        <section class="style143">
+
+            {% include "footer.html" %}
+
+            <script src="{% static 'bootstrap/4/js/popper.min.js' %}"></script>
+            <script src="{% static 'bootstrap/4/js/bootstrap.min.js' %}"></script>
+    </body>
+
+</html>

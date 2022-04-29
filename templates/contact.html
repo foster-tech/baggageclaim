@@ -1,0 +1,65 @@
+<!doctype html>
+{% load static %}
+<html>
+    <head>
+        <base href="/">
+        <meta charset="UTF-8">
+        <title>Contact</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+
+    <body is="dmx-app" id="contact">
+
+        {% include "header.html" %}
+        <section class="style235 d-none d-lg-block">
+            <div class="container style229 text-right">
+                <div class="row">
+                    <div class="col">
+                        <img src="{% static 'image/vazio.png' %}">
+                    </div>
+                    <div class="col">
+                        <p class="style230">CONTACT US</p>
+                        <p class="style231">
+                        Need help setting up or managing
+                        your Baggage Claim Passport?</p><button id="btn1" class="btn style232 text-center">click here for assistance</button>
+                        <p class="style233">Are you an investor who loves
+                        the concept of Baggage Claim?
+                        We’d love to hear from you!
+                        Contact us at:</p><button id="btn2" class="btn style234" style="font-family: PT Serif;">contact@baggageclaimmatching.com</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="style235 d-lg-none mt-0">
+            <div class="container style229 text-right">
+                <div class="row">
+                    <div class="col">
+                        <img src="{% static 'image/vazio.png' %}">
+                    </div>
+                    <div class="text-right mt-0 style401 w-auto h-auto col-12 offset-3 offset-md-0 offset-md-3 col-md-9 col-sm-11">
+
+
+
+
+                        <p class="style230">CONTACT US</p>
+                        <p style="font-family: PY Serif;" class="style400">
+                        Need help setting up or managing
+                        your Baggage Claim Passport?</p><button id="btn3" class="btn style232 text-center">click here for assistance</button>
+                        <p class="style400">Are you an investor who loves
+                        the concept of Baggage Claim?
+                        We’d love to hear from you!
+                        Contact us at:</p><button id="btn3" class="btn style234" style="font-family: PT Serif;">contact@baggageclaimmatching.com</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% include "footer.html" %}
+        <script src="{% static 'bootstrap/4/js/popper.min.js' %}"></script>
+        <script src="{% static 'bootstrap/4/js/bootstrap.min.js' %}"></script>
+    </body>
+
+</html>

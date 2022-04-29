@@ -1,0 +1,64 @@
+<!doctype html>
+{% load static %}
+<html>
+    <head>
+        <base href="/">
+        <meta charset="UTF-8">
+        <title>BAGGAGE SECTION</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+
+
+    <body is="dmx-app" id="free_profile">
+        <section class="style143">
+            <footer class="wappler-block bg-dark style32" style="">
+                <div class="container style59">
+                    <div class="row">
+                        <div class="col-12 style419">
+                            <a class="btn style421" onclick="window.scrollTo({top: 0, behavior: 'smooth'});"></a>
+                        </div>
+                        <div class="col">                            
+                            <a href="{% url 'coming_soon' %}">
+                                      <img src="{% static 'image/insta.jpg' %}" class="style37">
+                                  </a>
+                            <a href="{% url 'coming_soon' %}">
+                                      <img src="{% static 'image/in.jpg' %}" class="style417">
+                                  </a>
+                            <a href="{% url 'coming_soon' %}">
+                                      <img src="{% static 'image/face.jpg' %}" class="style38">
+                                  </a>                            
+                            </div>
+                        <div class="style418 col-4 d-lg-none">
+                            <div class="nav style160 justify-content-center justify-content-md-between flex-md-row">
+                                <a class="nav-item nav-link style152" href="{% url 'contact' %}">CONTACT</a>
+                                <a class="nav-item nav-link style152">FAQS</a>
+                                <a class="nav-item nav-link style152" href="{% url 'privacy' %}">PRIVACY &amp; TERMS</a>
+                                <a class="nav-item nav-link style152" href="{% url 'press' %}">PRESS</a>
+                            </div>
+                        </div>
+                        <div class="style418 col-4 d-none d-lg-block">
+                            <div class="nav style160 justify-content-center">
+                                <a class="nav-item nav-link style152" href="{% url 'contact' %}">CONTACT</a>
+                                <a class="nav-item nav-link style152">|</a>
+                                <a class="nav-item nav-link style152">FAQS</a>
+                                <a class="nav-item nav-link style152">|</a>
+                                <a class="nav-item nav-link style152" href="{% url 'privacy' %}">PRIVACY &amp; TERMS</a>
+                                <a class="nav-item nav-link style152">|</a>
+                                <a class="nav-item nav-link style152" href="{% url 'press' %}">PRESS</a>
+                            </div>
+                        </div>
+                        <div class="col style420"><img src="{% static 'image/logo_verde.jpg' %}" class="style34"></div>
+                    </div>
+
+                </div>
+            </footer>
+        </section>
+
+        <script src="{% static 'bootstrap/4/js/popper.min.js' %}"></script>
+        <script src="{% static 'bootstrap/4/js/bootstrap.min.js' %}"></script>
+    </body>
+
+</html>
