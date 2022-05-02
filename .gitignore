@@ -1,6 +1,7 @@
 __pycache__
 
-.vscode
+.vscode/**
 !.vscode/launch.json
+
 .idea
 *.sqlite3
