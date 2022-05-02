@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django-multiselectfield = "~=0.1.12"
+celery = {version = "~=5.1.2", extras = ["redis"]}
+django-celery-results = "~=2.2.0"
+numpy = ">=1.19"
+jsonfield = ">=3.0.0"
+Django = "~=3.2"
+Pillow = "~=8.0"
+mysqlclient = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
