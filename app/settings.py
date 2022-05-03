@@ -32,7 +32,10 @@ except KeyError:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.baggageclaimmatching.com', 'baggageclaimmatching.com', 'localhost']
+ALLOWED_HOSTS = [
+    'localhost', '127.0.0.1',
+    'www.baggageclaimmatching.com', 'baggageclaimmatching.com',
+]
 
 
 # Application definition
@@ -95,10 +98,15 @@ LOGIN_REDIRECT_URL = '/profile' # TODO IS IT ?
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+db_name = os.environ.get('DB_NAME');    # TODO: use a right env var to detect production
+
 DATABASES = {
-    'default': {
+    'default':  {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'local_db.sqlite3',
+    } if db_name is None else {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME', ''),
+        'NAME': db_name,
         'USER': os.environ.get('DB_USER', ''),
         'PASSWORD': os.environ.get('DB_PASS', ''),
         'HOST': 'localhost',

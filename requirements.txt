@@ -1,7 +1,0 @@
-Django>=3.2
-Pillow>=8
-django-multiselectfield>=0.1.12
-celery[redis]>=5.1.2
-django-celery-results>=2.2.0
-numpy>=1.19
-jsonfield>=3.0.0
