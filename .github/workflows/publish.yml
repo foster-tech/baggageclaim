@@ -2,7 +2,7 @@ name: Publish
 on:
   workflow_dispatch:
 jobs:
-  publish-promote:
+  publish:
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
@@ -22,4 +22,6 @@ jobs:
       uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_PRIVATE_KEY }} 
-        known_hosts: 'test-random-host'
+        known_hosts: ${{ secrets.KNOWN_HOSTS }}
+    - name: Deploy with rsync
+      run: rsync -avz ./Pipfile ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/baggageclaimmatc/baggageclaim/
