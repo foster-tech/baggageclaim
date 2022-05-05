@@ -92,7 +92,7 @@ CELERY_IGNORE_RESULT = False
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 
 LOGIN_URL = '/accounts/login/'
-LOGOUT_REDIRECT_URL = '/home' # TODO check this
+LOGOUT_REDIRECT_URL = '/' # TODO check this
 LOGIN_REDIRECT_URL = '/profile' # TODO IS IT ?
 
 # Database
