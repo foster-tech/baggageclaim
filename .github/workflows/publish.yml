@@ -26,4 +26,6 @@ jobs:
     - name: Adding Known Hosts
       run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
     - name: Deploy with rsync
-      run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ./Pipfile ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/baggageclaimmatc/baggageclaim/
+      run: rsync -avz --exclude={'.github','.vscode','.gitignore','README.md','static'}  -e "ssh -p ${{ secrets.SSH_PORT }}" . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/baggageclaimmatc/baggageclaim/
+    - name: Collect static files
+      run: ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} python manage.py collectstatic
