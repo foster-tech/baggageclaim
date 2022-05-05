@@ -36,6 +36,6 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd /home/${{ secrets.SSH_USER }}/baggageclaim/
-          source /home/${{ secrets.SSH_USER }}/virtualenv/baggageclaim/3.6/bin/activate
+          source /home/${{ secrets.SSH_USER }}/virtualenv/baggageclaim/3.9/bin/activate
           pip install requirements.txt
           python manage.py collectstatic --no-input
