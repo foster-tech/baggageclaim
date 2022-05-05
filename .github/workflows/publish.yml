@@ -28,4 +28,4 @@ jobs:
     - name: Deploy with rsync
       run: rsync -avz --exclude={'.github','.vscode','.gitignore','README.md','static'}  -e "ssh -p ${{ secrets.SSH_PORT }}" . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/baggageclaimmatc/baggageclaim/
     - name: Collect static files
-      run: ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} python manage.py collectstatic
+      run: ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/baggageclaimmatc/baggageclaim/; python manage.py collectstatic"
