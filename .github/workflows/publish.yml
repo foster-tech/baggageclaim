@@ -26,6 +26,15 @@ jobs:
     - name: Adding Known Hosts
       run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
     - name: Deploy with rsync
-      run: rsync -avz --exclude={'.github','.vscode','.gitignore','README.md','static'}  -e "ssh -p ${{ secrets.SSH_PORT }}" . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/baggageclaim/
-    - name: Collect static files
-      run: ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/${{ secrets.SSH_USER }}/baggageclaim/; pwd"
+      run: rsync -avz --exclude={'.git','.github','.vscode','.gitignore','README.md','static'}  -e "ssh -p ${{ secrets.SSH_PORT }}" . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/baggageclaim/
+    - name: Install App
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.SSH_PORT }}
+        script: |
+          cd /home/${{ secrets.SSH_USER }}/baggageclaim/
+          source /home/${{ secrets.SSH_USER }}/virtualenv/baggageclaim/3.6/bin/activate
+          python manage.py collectstatic --no-input
