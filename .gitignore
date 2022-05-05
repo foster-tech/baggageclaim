@@ -6,4 +6,7 @@ __pycache__
 .idea
 *.sqlite3
 
+# Ignore Mac DS_Store files
+
 .DS_Store
+**/.DS_Store

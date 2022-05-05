@@ -1,3 +1,11 @@
+@font-face {
+	font-family: 'Retrokia Caps Regular';
+	src: url('../fonts/Retrokia\ Caps\ Regular.otf') format('opentype'),
+       url('../fonts/Retrokia\ Caps\ Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 
 .radio-select li:first-child {
 	display: none; /* hide the first option since it's the empty value */
@@ -23,7 +31,7 @@ body, html {
 	padding-left: 16px;
 	padding-right: 16px;
 	/* font family: Lato Latin	*/
-	font-family: Lato latin;
+	font-family: 'Retrokia Caps Regular';
 }
 .style8 {
 	color: #55c0af;
@@ -1316,7 +1324,9 @@ body, html {
 }
 .style165 {
 	/* max-width: 100%	*/
+	font-family: 'Retrokia Caps Regular';
 	width: 70%;
+	font-size: 0.80rem;
 }
 .style166 {
 	/* background-image: url("../image/matches.jpg")	*/
@@ -1329,7 +1339,7 @@ body, html {
 	background-image: url("../image/fundo_profile.jpg");
 }
 .style169 {
-	font-family: PT serif;
+	font-family: 'Retrokia Caps Regular';
 	color: d4d4f;
 	margin-bottom: 0px;
 }
@@ -1377,7 +1387,7 @@ body, html {
 }
 .style177 {
 	display: inherit;
-	font-family: PT serif;
+	font-family: 'Retrokia Caps Regular';
 	color: #000;
 	margin-bottom: 1px;
 }
@@ -1442,7 +1452,7 @@ body, html {
 	color: #808285;
 	margin-top: 4px;
 	margin-bottom: 21px;
-	font-family: Montserrat;
+	font-family: 'Retrokia Caps Regular';
 }
 .style200 {
 	text-align: center;
@@ -1802,6 +1812,8 @@ body, html {
 .style287 {
 	background-color: #55c0af;
 	color: white;
+	font-family: 'Retrokia Caps Regular';
+	font-size: 0.80rem;
 }
 .style287::placeholder {
 	color: white;
@@ -1850,15 +1862,16 @@ body, html {
 }
 .style304 {padding-top: 183px
 }
-.style306 {color: #55c0af;font-weight: bold;margin-bottom: 0px;padding-bottom: 0px
+.style306 {color: #55c0af;font-weight: bold;margin-bottom: 0px;padding-bottom: 0px; font-family: 'Retrokia Caps Regular';
 }
 .style307 {color: #6c757d
 }
-.style308 {color: #6c757d;margin-bottom: 38px;padding-top: 0px
+.style308 {color: #6c757d;margin-bottom: 38px;padding-top: 0px; font-family: 'Retrokia Caps Regular';
 }
-.style309 {color: #6c757d;background-color: #f8f9fa;width: 200px;height: 40px;border-width: 2px;border-color: rgba(108, 117, 125, 0.59);border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;margin-bottom: 109px
+.style309 {
+	font-family: 'Retrokia Caps Regular';color: #6c757d;background-color: #f8f9fa;width: 100%;height: 40px;border-width: 2px;border-color: rgba(108, 117, 125, 0.59);border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;margin-bottom: 109px
 }
-.style309b {color: #6c757d;background-color: #f8f9fa;width: 120px;height: 40px;border-width: 2px;border-color: rgba(108, 117, 125, 0.59);border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;margin-bottom: 109px
+.style309b {font-family: 'Retrokia Caps Regular';color: #6c757d;background-color: #f8f9fa;width: 120px;height: 40px;border-width: 2px;border-color: rgba(108, 117, 125, 0.59);border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;margin-bottom: 109px
 }
 .style310 {margin-bottom: 10px
 }
