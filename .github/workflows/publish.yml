@@ -17,11 +17,25 @@ jobs:
         python -m pip install --upgrade pipenv
     - name: Generate requirements.txt
       run: |
-        pipenv lock -r > requirements.txt
+        pipenv requirements >> requirements.txt
     - name: Install SSH Key
       uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        known_hosts: ${{ secrets.KNOWN_HOSTS }}
+        known_hosts: unnecessary
+    - name: Adding Known Hosts
+      run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
     - name: Deploy with rsync
-      run: rsync -avz ./Pipfile ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/baggageclaimmatc/baggageclaim/
+      run: rsync -avz --exclude={'.git','.github','.vscode','.gitignore','README.md','static'}  -e "ssh -p ${{ secrets.SSH_PORT }}" . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/baggageclaim/
+    - name: Install App
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.SSH_PORT }}
+        script: |
+          cd /home/${{ secrets.SSH_USER }}/baggageclaim/
+          source /home/${{ secrets.SSH_USER }}/virtualenv/baggageclaim/3.9/bin/activate
+          pip install -r requirements.txt
+          python manage.py collectstatic --no-input
