@@ -111,7 +111,7 @@ mysql_config = {
     'NAME': os.environ.get('DB_NAME', ''),
     'USER': os.environ.get('DB_USER', ''),
     'PASSWORD': os.environ.get('DB_PASS', ''),
-    'HOST': 'localhost',
+    'HOST': os.environ.get('DB_HOST', 'localhost'),
     'PORT': '3306',
     'OPTIONS': {
         'sql_mode': 'STRICT_ALL_TABLES',
