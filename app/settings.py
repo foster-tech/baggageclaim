@@ -190,7 +190,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': 'baggageclaim.log',
+            'filename': 'logs/baggageclaim.log',
         },
     },
     'loggers': {
