@@ -33,9 +33,13 @@ def Claim1View(request):
             user_profile.filled_claims = 1
             user_profile.save()
             return redirect('claim2')
-    if request.method == 'GET':
-        form = Claim1Form(instance=claim)
-    context = { 'form': form }
+    # if GET method
+    form = Claim1Form(instance=claim)
+    
+    # FIXME: temporary workaround to display numbers (form_numbers.Q1A, etc)
+    form_numbers = { field[0]: i+1 for i, field in enumerate(form.fields.items()) }
+    
+    context = { 'form': form, 'form_numbers': form_numbers }
     return render(request, 'claim1.html', context)
 
 @login_required

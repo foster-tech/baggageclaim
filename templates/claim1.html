@@ -9,6 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <style>
+            ul > li {
+                list-style-type: none;
+            }
+        </style>
     </head>
 
     <body is="dmx-app" id="free_profile">
@@ -34,64 +39,119 @@
                         {% csrf_token %}
 
                         <div class="form-group style454">
-
-                            <legend class="col-form-label style459">My kids control my life. Good luck.</legend>
-                            {{ form.Q1A }}
-                            <legend class="col-form-label style459">I can’t go near children. I don’t ever want them - sorry for bursting your ideal family bubble.  </legend>
-                            {{ form.Q2A }}
-                            <legend class="col-form-label style459">I love kids, but don’t want any of my own. I could play step parent if need be.</legend>
-                            {{ form.Q3A }}
-                            <legend class="col-form-label style459">I give my pet more attention than my partner.</legend>
-                            {{ form.Q4A }}
-                            <legend class="col-form-label style459">I believe in ethical non-monogamy.</legend>
-                            {{ form.Q5A }}
-                            <legend class="col-form-label style459">I don’t believe in or want marriage and will never change my mind. No matter how much we love each other, no means no.  </legend>
-                            {{ form.Q6A }}
-                            <legend class="col-form-label style459">I’m a clean freak, classic Type A. I will truly be irritated if the house is not kept clean/organized.</legend>
-                            {{ form.Q7A }}
-                            <legend class="col-form-label style459">I’m extremely messy and I can’t change it, so don’t bother trying to train me.</legend>
-                            {{ form.Q8A }}
-                            <legend class="col-form-label style459">I’m not financially motivated because as long as my basic needs are met, I am content.</legend>
-                            {{ form.Q9A }}
-                            <legend class="col-form-label style459">My partner will often feel that he/she has to compete with my friends for my attention and time.</legend>
-                            {{ form.Q10A }}
-                            <legend class="col-form-label style459">I enjoy doing non-legalized drugs recreationally.</legend>
-                            {{ form.Q11A }}
-                            <legend class="col-form-label style459">I enjoy doing non-legalized drugs often and it’s a big part of my life.</legend>
-                            {{ form.Q12A }}
-                            <legend class="col-form-label style459">I am a cigarette smoker. The smell isn’t that bad, I promise!</legend>
-                            {{ form.Q13A }}
-                            <legend class="col-form-label style459">I’m a messy eater and sometimes will lick the food off of my fingers.</legend>
-                            {{ form.Q14A }}
-                            <legend class="col-form-label style459">I don’t put a lot of effort into my clothing. Comfort is key, and the rest is superficial stuff.</legend>
-                            {{ form.Q15A }}
-                            <legend class="col-form-label style459">When it comes to personal hygiene, I enjoy getting away with the minimum.</legend>
-                            {{ form.Q16A }}
-                            <legend class="col-form-label style459">I often prioritize video games, social media or tv in my free time.</legend>
-                            {{ form.Q17A }}
-                            <legend class="col-form-label style459">I have a medical condition that I’m careful not to transmit to my sexual partners.</legend>
-                            {{ form.Q18A }}
-                            <legend class="col-form-label style459">I prioritize the opinion of my family. What they think about my relationship really impacts me.</legend>
-                            {{ form.Q19A }}
-                            <legend class="col-form-label style459">You could say I’m a mama’s boy/daddy’s girl.</legend>
-                            {{ form.Q20A }}
-                            <legend class="col-form-label style459">My sex equipment down there is not known to be the biggest which has caused some sexual dissatisfaction in the past but I can compensate with technique.</legend>
-                            {{ form.Q21A }}
-                            <legend class="col-form-label style459">I can’t date someone who is:</legend>
-                            {{ form.Q22A }}
-                            <legend class="col-form-label style459">I am</legend>
-                            {{ form.Q23A}}
-                            <legend class="col-form-label style459">When it comes to money, I’m frugal. Spending gives me anxiety.</legend>
-                            {{ form.Q24A }}
-                            <legend class="col-form-label style459">When it comes to money, I’m too “spendy” and don’t have limits.</legend>
-                            {{ form.Q25A }}
-                            <legend class="col-form-label style459">When it comes to pets, I’m picky. I’m not comfortable with (select all that apply):</legend>
-                            {{ form.Q26A }}
-                            <legend class="col-form-label style459">I typically eliminate romantic partners if their social or political views don’t align with mine and are any of the
-following (select all that apply):</legend>
-                            {{ form.Q27A }}
-                            <legend class="col-form-label style459">My religious views get in the way of a relationship unless my partner shares the same views or decides to convert (check all that are acceptable).</legend>
-                            {{ form.Q28A }}
+                            <ul>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q1A }}) My kids control my life. Good luck.</legend>
+                                    {{ form.Q1A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q2A }}) I can’t go near children. I don’t ever want them - sorry for bursting your ideal family bubble.  </legend>
+                                    {{ form.Q2A }}
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q3A }}) I love kids, but don’t want any of my own. I could play step parent if need be.</legend>
+                                    {{ form.Q3A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q4A }}) I give my pet more attention than my partner.</legend>
+                                    {{ form.Q4A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q5A }}) I believe in ethical non-monogamy.</legend>
+                                    {{ form.Q5A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q6A }}) I don’t believe in or want marriage and will never change my mind. No matter how much we love each other, no means no.  </legend>
+                                    {{ form.Q6A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q7A }}) I’m a clean freak, classic Type A. I will truly be irritated if the house is not kept clean/organized.</legend>
+                                    {{ form.Q7A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q8A }}) I’m extremely messy and I can’t change it, so don’t bother trying to train me.</legend>
+                                    {{ form.Q8A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q9A }}) I’m not financially motivated because as long as my basic needs are met, I am content.</legend>
+                                    {{ form.Q9A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q10A }}) My partner will often feel that he/she has to compete with my friends for my attention and time.</legend>
+                                    {{ form.Q10A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q11A }}) I enjoy doing non-legalized drugs recreationally.</legend>
+                                    {{ form.Q11A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q12A }}) I enjoy doing non-legalized drugs often and it’s a big part of my life.</legend>
+                                    {{ form.Q12A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q13A }}) I am a cigarette smoker. The smell isn’t that bad, I promise!</legend>
+                                    {{ form.Q13A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q14A }}) I’m a messy eater and sometimes will lick the food off of my fingers.</legend>
+                                    {{ form.Q14A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q15A }}) I don’t put a lot of effort into my clothing. Comfort is key, and the rest is superficial stuff.</legend>
+                                    {{ form.Q15A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q16A }}) When it comes to personal hygiene, I enjoy getting away with the minimum.</legend>
+                                    {{ form.Q16A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q17A }}) I often prioritize video games, social media or tv in my free time.</legend>
+                                    {{ form.Q17A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q18A }}) I have a medical condition that I’m careful not to transmit to my sexual partners.</legend>
+                                    {{ form.Q18A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q19A }}) I prioritize the opinion of my family. What they think about my relationship really impacts me.</legend>
+                                    {{ form.Q19A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q20A }}) You could say I’m a mama’s boy/daddy’s girl.</legend>
+                                    {{ form.Q20A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q21A }}) My sex equipment down there is not known to be the biggest which has caused some sexual dissatisfaction in the past but I can compensate with technique.</legend>
+                                    {{ form.Q21A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q22A }}) I can’t date someone who is:</legend>
+                                    {{ form.Q22A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q23 }}) I am</legend>
+                                    {{ form.Q23A}}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q24A }}) When it comes to money, I’m frugal. Spending gives me anxiety.</legend>
+                                    {{ form.Q24A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q25A }}) When it comes to money, I’m too “spendy” and don’t have limits.</legend>
+                                    {{ form.Q25A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q26A }}) When it comes to pets, I’m picky. I’m not comfortable with (select all that apply):</legend>
+                                    {{ form.Q26A }}
+                                </li>
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q27A }}) I typically eliminate romantic partners if their social or political views don’t align with mine and are any of the following (select all that apply):</legend>
+                                </li>
+                                    {{ form.Q27A }}
+                                <li>
+                                    <legend class="col-form-label style459">{{ form_numbers.Q28A }}) My religious views get in the way of a relationship unless my partner shares the same views or decides to convert (check all that are acceptable).</legend>
+                                    {{ form.Q28A }}
+                                </li>
+                            </ul>
                         </div>
                         <div class="col text-center style239">
                             <button class="btn style241 active" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Baggage Claim 1</button>
