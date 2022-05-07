@@ -19,6 +19,25 @@ body, html {
 	margin: 0;
 }
 
+.nav-item {
+	border-color: #55c0af !important;
+}
+
+.nav-link {
+	color: #55c0af;
+}
+
+.nav-pills .nav-link.active {
+	text-decoration: underline;
+	background-color: transparent;
+	color: #55c0af;
+}
+
+.nav-link:hover {
+	color: #55c0af;
+	text-decoration: underline;
+}
+
 /* Wappler generated */
 
 .style1 {background-color: #141414;/* color: #141414  *//* top: 50%  *//* left: 50%  *//* margin-right: -50%  */position: absolute

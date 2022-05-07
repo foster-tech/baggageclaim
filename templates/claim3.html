@@ -9,6 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <style>
+            ul > li {
+                list-style-type: none;
+            }
+        </style>
     </head>
 
     <body is="dmx-app" id="free_profile">
@@ -16,49 +21,54 @@
         {% include "header.html" %}
         {% block content %}
         <section class="style167">
-            <div class="container style166 text-center">
-                <img src="{% static 'image/Skeletons.png' %}" class="style242">
-            </div>
+            {% include "baggage_header.html" with img="image/Skeletons.png" %}
             <div class="container">
-                <p style="font-family: Montserrat;" class="mb-5">Complete Baggage Claims in order to get matches that are compatible with you. The more Claims you complete, the deeper of a connection you’ll find.</p>
+                <p class="mb-5">Complete Baggage Claims in order to get matches that are compatible with you. The more Claims you complete, the deeper of a connection you’ll find.</p>
                 <div class="row">
                     <div class="col">
-                        <h1 style="font-family: Montserrat; font-size: 28px;">Baggage Claim 3: Skeletons &amp; Inner Demons</h1>
+                        <h1 style="font-size: 28px;">Baggage Claim 3: Skeletons &amp; Inner Demons</h1>
                     </div>
                     <form class="col-12 style204" method="post">
                         {% csrf_token %}
                         <div class="form-group">
 
                             <label for="input2" class="style177">• In relationships (check all that apply):</label>
-
-                            <legend class="col-form-label style461">I have had an abusive partner in the past.</legend>
-                            {{ form.Q48A }}
-                            <legend class="col-form-label style461">In the past I have lied to my partner about using condoms, birth control, or contraceptives.</legend>
-                            {{ form.Q49A }}
-                            <legend class="col-form-label style461">In the past I have inflicted what some would consider to be physical abuse.</legend>
-                            {{ form.Q50A }}
-                            <legend class="col-form-label style461">I have cheated in my past relationship(s).</legend>
-                            {{ form.Q51A }}
-                            <legend class="col-form-label style461">I have struggled with drug addiction.</legend>
-                            {{ form.Q52A }}
-                            <legend class="col-form-label style461">I have struggled with alcohol addiction.</legend>
-                            {{ form.Q53A }}
-                            <legend class="col-form-label style461">I have a pattern of ghosting romantic partners.</legend>
-                            {{ form.Q54A }}
-                            <legend class="col-form-label style461">I have a habit of lying - even about the smallest things – because it just seems easier than telling the truth.</legend>
-                            {{ form.Q55A }}
-                            <legend class="col-form-label style461">I have a habit of purposely making my partners jealous.</legend>
-                            {{ form.Q56A }}
-                            <legend class="col-form-label style461">I’ve had big struggles with negative thinking about my body image.</legend>
-                            {{ form.Q57A }}
+                            <ul>
+                            <li><legend class="col-form-label style461">{{ form_numbers.Q48A  }}) I have had an abusive partner in the past.</legend>
+							{{ form.Q48A }}
+							</li>
+                            <li><legend class="col-form-label style461">{{ form_numbers.Q49A  }}) In the past I have lied to my partner about using condoms, birth control, or contraceptives.</legend>
+							{{ form.Q49A }}
+							</li>
+                            <li><legend class="col-form-label style461">{{ form_numbers.Q50A  }}) In the past I have inflicted what some would consider to be physical abuse.</legend>
+							{{ form.Q50A }}
+							</li>
+                            <li><legend class="col-form-label style461">{{ form_numbers.Q51A  }}) I have cheated in my past relationship(s).</legend>
+							{{ form.Q51A }}
+							</li>
+                            <li><legend class="col-form-label style461">{{ form_numbers.Q52A  }}) I have struggled with drug addiction.</legend>
+							{{ form.Q52A }}
+							</li>
+                            <li><legend class="col-form-label style461">{{ form_numbers.Q53A  }}) I have struggled with alcohol addiction.</legend>
+							{{ form.Q53A }}
+							</li>
+                            <li><legend class="col-form-label style461">{{ form_numbers.Q54A  }}) I have a pattern of ghosting romantic partners.</legend>
+							{{ form.Q54A }}
+							</li>
+                            <li><legend class="col-form-label style461">{{ form_numbers.Q55A  }}) I have a habit of lying - even about the smallest things – because it just seems easier than telling the truth.</legend>
+							{{ form.Q55A }}
+							</li>
+                            <li><legend class="col-form-label style461">{{ form_numbers.Q56A  }}) I have a habit of purposely making my partners jealous.</legend>
+							{{ form.Q56A }}
+							</li>
+                            <li><legend class="col-form-label style461">{{ form_numbers.Q57A  }}) I’ve had big struggles with negative thinking about my body image.</legend>
+							{{ form.Q57A }}
+							</li>
+                            </ul>
                         </div>
-                        <div class="row">
-                            <div class="col text-center style239">
-                            <button class="btn style241 disabled">Baggage Claim 1</button>
-                            <button class="btn style241 disabled">Baggage Claim 2</button>
-                            <button class="btn style241 active"onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Baggage Claim 3</button>
-                            <button class="btn style241 active" type="submit">Baggage Claim 4</button>
-                            </div>
+                        <div class="col text-center style239">
+                            <a class="btn style241 active" href="{% url 'claim2' %}">Back</a>
+                            <button class="btn style241 active" type="submit">Next</button>
                         </div>
                     </form>
                 </div>

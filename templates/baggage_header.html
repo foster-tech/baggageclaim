@@ -1,0 +1,18 @@
+{% load static %}
+<div class="container style166 h-auto w-auto">
+    <img src="{% static img %}" class="style242 mt-0">
+    <ul class="float-left position-absolute container nav nav-pills" style="top:250px;font-size:0.8rem">
+        <li class="nav-item border-right">
+          <a class="nav-link active pl-0 pt-0 pb-0 main-color" href="{% url 'claim1' %}">Baggage Claim 1</a>
+        </li>
+        <li class="nav-item border-right">
+          <a class="nav-link pt-0 pb-0 main-color" href="{% url 'claim2' %}">Baggage Claim 2</a>
+        </li>
+        <li class="nav-item border-right">
+          <a class="nav-link pt-0 pb-0 main-color" href="{% url 'claim3' %}">Baggage Claim 3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pt-0 pb-0 main-color"  href="{% url 'claim4' %}">Baggage Claim 4</a>
+        </li>
+      </ul>
+</div>

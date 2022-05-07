@@ -9,6 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <style>
+            ul > li {
+                list-style-type: none;
+            }
+        </style>
     </head>
 
     <body is="dmx-app" id="free_profile">
@@ -16,73 +21,93 @@
         {% include "header.html" %}
         {% block content %}
         <section class="style167">
-            <div class="container style166 text-center">
-                <img src="{% static 'image/Behavior.png' %}" class="style242">
-            </div>
+            {% include "baggage_header.html" with img="image/Behavior.png" %}
             <div class="container">
-                <p style="font-family: Montserrat;" class="mb-2 pt-3 pb-3">Complete Baggage Claims in order to get matches that are compatible with you. The more Claims you complete, the deeper of a connection you’ll
+                <p class="mb-2 pt-3 pb-3">Complete Baggage Claims in order to get matches that are compatible with you. The more Claims you complete, the deeper of a connection you’ll
                 find.</p>
                 <div class="row">
                     <div class="col">
-                        <h1 style="font-family: Montserrat; font-size: 28px;" class="mt-3 mb-3">Baggage Claim 2: Behavior</h1>
+                        <h1 style="font-size: 28px;" class="mt-3 mb-3">Baggage Claim 2: Behavior</h1>
                     </div>
                     <form class="col-12 style204" method="post">
                         {% csrf_token %}
                         <div class="form-group">
-
                             <label for="input2" class="style177">• In relationships (check all that apply):</label>
-                            <legend class="col-form-label style461">I’m a workaholic; sometimes I love and prioritize work more than I prioritize my partner.</legend>
-                            {{form.Q29A}}
-                            <legend class="col-form-label style461">I have a wandering eye; if someone catches my eye, I stare longer than I should.</legend>
-                            {{form.Q30A}}
-                            <legend class="col-form-label style461">Most would consider me super flirty, whether or not I’m in a relationship.</legend>
-                            {{form.Q31A}}
-                            <legend class="col-form-label style461">I want sex more than 3-4 times a week. Better keep up!</legend>
-                            {{form.Q32A}}
-                            <legend class="col-form-label style461">I tend to nag a lot. I always find something to complain about.</legend>
-                            {{form.Q33A}}
-                            <legend class="col-form-label style461">I’m clingy and need contact constantly.</legend>
-                            {{form.Q34A}}
-                            <legend class="col-form-label style461">I’m not that sexual so I don’t need sex often, but that doesn’t mean you can’t romance the pants off of me.</legend>
-                            {{form.Q35A}}
-                            <legend class="col-form-label style461">It’s hard for me to resist sexual temptation. I may slip up even if I’m in a relationship.</legend>
-                            {{form.Q36A}}
-                            <legend class="col-form-label style461">I am close friends with my ex.</legend>
-                            {{form.Q37A}}
-                            <legend class="col-form-label style461">I’m not very romantic when I’m in love and don’t feel the need to express love often. I typically only do something romantic on special occasions or if I’ve messed up.</legend>
-                            {{form.Q38A}}
-                            <legend class="col-form-label style461">I don’t like to text a lot unless it’s important. The most you’ll get out of me are a few one-word texts if you’re lucky. I’m the “K” with a period.</legend>
-                            {{form.Q39A}}
-                            <legend class="col-form-label style461">Communication is not my strong suit; I don’t express my thoughts and feelings much.</legend>
-                            {{form.Q40A}}
-                            <legend class="col-form-label style461">I avoid deep conversations and prefer to keep it light with small talk.</legend>
-                            {{form.Q41A}}
-                            <legend class="col-form-label style461">I tend to scream and yell when I’m upset. When I’m angry, I certainly express it loudly. If high volume overwhelms you, I’m not your match.</legend>
-                            {{form.Q42A}}
-                            <legend class="col-form-label style461">I dislike loud and “passionate” arguers. If that’s your culture I understand, but count me out. I live by the motto keep calm at all costs; otherwise I just shut down.</legend>
-                            {{form.Q42B}}
-                            <legend class="col-form-label style461">Let’s “go Dutch” and split the bills. When it comes to gender norms, I’m non-traditional.</legend>
-                            {{form.Q43A}}
-                            <legend class="col-form-label style461">I almost always prefer relaxation over activity. Some call it lazy, I call it chill.</legend>
-                            {{form.Q44A}}
-                            <legend class="col-form-label style461">I’m super high energy, and it’s not easy finding a partner who can keep up.</legend>
-                            {{form.Q44B}}
-                            <legend class="col-form-label style461">Because I’m eager to please, I make promises to my partner easily but rarely follow through. My intentions are good, though!</legend>
-                            {{form.Q45A}}
-                            <legend class="col-form-label style461">I don’t like to commit. Some would call me a “commitment phobe.”</legend>
-                            {{form.Q46A}}
-                            <legend class="col-form-label style461">Because labeling a relationship is extremely important to me, I tend to pressure my partner to tell me where we stand. I just can’t deal with ambiguity.</legend>
-                            {{form.Q46B}}
-                            <legend class="col-form-label style461">I’m the biggest flake you’ll ever meet.</legend>
-                            {{form.Q47A}}
-                            <legend class="col-form-label style461">I’m a stickler about plans and get very frustrated when others don’t follow through.</legend>
-                            {{form.Q47B}}
+                            <ul>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q29A }}) I’m a workaholic; sometimes I love and prioritize work more than I prioritize my partner.</legend>
+								{{form.Q29A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q30A }}) I have a wandering eye; if someone catches my eye, I stare longer than I should.</legend>
+								{{form.Q30A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q31A }}) Most would consider me super flirty, whether or not I’m in a relationship.</legend>
+								{{form.Q31A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q32A }}) I want sex more than 3-4 times a week. Better keep up!</legend>
+								{{form.Q32A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q33A }}) I tend to nag a lot. I always find something to complain about.</legend>
+								{{form.Q33A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q34A }}) I’m clingy and need contact constantly.</legend>
+								{{form.Q34A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q35A }}) I’m not that sexual so I don’t need sex often, but that doesn’t mean you can’t romance the pants off of me.</legend>
+								{{form.Q35A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q36A }}) It’s hard for me to resist sexual temptation. I may slip up even if I’m in a relationship.</legend>
+								{{form.Q36A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q37A }}) I am close friends with my ex.</legend>
+								{{form.Q37A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q38A }}) I’m not very romantic when I’m in love and don’t feel the need to express love often. I typically only do something romantic on special occasions or if I’ve messed up.</legend>
+								{{form.Q38A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q39A }}) I don’t like to text a lot unless it’s important. The most you’ll get out of me are a few one-word texts if you’re lucky. I’m the “K” with a period.</legend>
+								{{form.Q39A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q40A }}) Communication is not my strong suit; I don’t express my thoughts and feelings much.</legend>
+								{{form.Q40A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q41A }}) I avoid deep conversations and prefer to keep it light with small talk.</legend>
+								{{form.Q41A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q42A }}) I tend to scream and yell when I’m upset. When I’m angry, I certainly express it loudly. If high volume overwhelms you, I’m not your match.</legend>
+								{{form.Q42A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q42B }}) I dislike loud and “passionate” arguers. If that’s your culture I understand, but count me out. I live by the motto keep calm at all costs; otherwise I just shut down.</legend>
+								{{form.Q42B}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q43A }}) Let’s “go Dutch” and split the bills. When it comes to gender norms, I’m non-traditional.</legend>
+								{{form.Q43A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q44A }}) I almost always prefer relaxation over activity. Some call it lazy, I call it chill.</legend>
+								{{form.Q44A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q44B }}) I’m super high energy, and it’s not easy finding a partner who can keep up.</legend>
+								{{form.Q44B}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q45A }}) Because I’m eager to please, I make promises to my partner easily but rarely follow through. My intentions are good, though!</legend>
+								{{form.Q45A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q46A }}) I don’t like to commit. Some would call me a “commitment phobe.”</legend>
+								{{form.Q46A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q46B }}) Because labeling a relationship is extremely important to me, I tend to pressure my partner to tell me where we stand. I just can’t deal with ambiguity.</legend>
+								{{form.Q46B}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q47A }}) I’m the biggest flake you’ll ever meet.</legend>
+								{{form.Q47A}}
+								</li>
+                                <li><legend class="col-form-label style461">{{ form_numbers.Q47B }}) I’m a stickler about plans and get very frustrated when others don’t follow through.</legend>
+								{{form.Q47B}}
+								</li>
+                            </ul>
                         </div>
                         <div class="col text-center style239">
-                            <button class="btn style241 disabled">Baggage Claim 1</button>
-                            <button class="btn style241 active" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Baggage Claim 2</button>
-                            <button class="btn style241 active" type="submit">Baggage Claim 3</button>
-                            <button class="btn style241 disabled">Baggage Claim 4</button>
+                            <a class="btn style241 active" href="{% url 'claim1' %}">Back</a>
+                            <button class="btn style241 active" type="submit">Next</button>
                         </div>
                     </form>
                 </div>
