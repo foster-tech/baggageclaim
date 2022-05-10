@@ -15,7 +15,7 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 
 body, html {
-	font-family: 'Retrokia Caps Regular';
+	/* font-family: 'Retrokia Caps Regular'; */
 	margin: 0;
 }
 
@@ -1628,41 +1628,31 @@ body, html {
 }
 .style230 {
 	color: #55c0af;
-	text-align: right;
 	font-family: Montserrat;
 	font-weight: bold;
 	font-size: 30px;
 }
 .style231 {
 	color: #d1d3d4;
-	text-align: right;
-	font-family: PT Serif;
-	padding-top: 0px;
-	padding-bottom: 12px;padding-left: 226px;
+	font-family: 'PT Serif';
 }
 .style232 {
-	text-align: right;
 	height: 36px;
 	width: 250px;
 	color: #58595b;
 	background-image: url("../image/contact_bt.png");
 	background-size: cover;
-	margin-bottom: 12px;
-	margin-left: -32px;
 }
 .style233 {
-	text-align: right;
 	color: #d1d3d4;
-	font-family: PT Serif;
+	font-family: 'PT Serif';
 	padding-top: 28px;
-	padding-left: 256px;
 }
 .style234 {
 	color: #55c0af;
-	margin-bottom: 0px;
-	margin-left: -83px;
-	margin-right: 4px;
-	padding: 0px;
+}
+.style234:hover {
+	color: #55c0af;
 }
 .style235 {
 	background-color: #000;
