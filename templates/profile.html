@@ -33,6 +33,8 @@
                                 Something went wrong, check the fields and try again.
                             </div>
                         {% endif %}
+
+                        <form id="form1" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
 
                             {% if user_profile.stamp_count %}
