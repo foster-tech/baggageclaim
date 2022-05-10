@@ -195,8 +195,8 @@ body, html {
 }
 .style50 {
 	text-align: center;
-	font-size: 18px;
-	font-family: 'PT Serif', serif;
+	font-size: 16px;
+	font-family: 'Retrokia Caps Regular';
 	color: #8c8d8e;
 	line-height: 1.8;
 	margin-bottom: 0px;
@@ -1097,6 +1097,7 @@ body, html {
 }
 .style103 {
 	background-image: url("../image/fundo_tags.jpg");
+	background-size: cover;
 }
 .style104 {
 	background-image: url("../image/buttom01.png");
@@ -1140,9 +1141,9 @@ body, html {
 }
 .style122 {
 	background-image: url("../image/casal_03d.jpg");
-	height: 600px;
 	text-align: left;
 	background-size: contain;
+	padding-bottom: 30px;
 }
 .style112 {
 	margin-top: 0px;
