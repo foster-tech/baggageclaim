@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from django.conf.urls import url
 from django.views.generic.base import TemplateView
 from profiles.views import ProfileView, register
-from claims.views import Claim1View, Claim2View, Claim3View, Claim4View
+from claims.views import ClaimView, Claim1View, Claim2View, Claim3View, Claim4View
 from app.views import DestinationView
 
 urlpatterns = [
@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'destination/', DestinationView, name='destination'),
     url(r'coming_soon/',TemplateView.as_view(template_name='coming_soon.html'), name='coming_soon'),
 
+    url(r'claim/', ClaimView, name='claim'),
     url(r'claim1/', Claim1View, name='claim1'),
     url(r'claim2/', Claim2View, name='claim2'),
     url(r'claim3/', Claim3View, name='claim3'),
