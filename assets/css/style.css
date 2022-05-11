@@ -19,6 +19,9 @@ body, html {
 	margin: 0;
 }
 
+.nav.nav-pills {
+	top: 60%;;font-size:0.8rem
+}
 .nav-item {
 	border-color: #55c0af !important;
 }
@@ -36,6 +39,10 @@ body, html {
 .nav-link:hover {
 	color: #55c0af;
 	text-decoration: underline;
+}
+
+.font-family-default {
+	font-family: 'Retrokia Caps Regular';
 }
 
 /* Wappler generated */
@@ -2095,5 +2102,5 @@ body, html {
 }
 .style460 {width: 100%
 }
-.style461 {padding-bottom: 1px
+.style461 {padding-bottom: 1px;
 }
