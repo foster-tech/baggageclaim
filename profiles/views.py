@@ -5,7 +5,7 @@ from django.db.utils import IntegrityError
 from django.shortcuts import redirect, render
 
 from profiles.forms import RegisterForm, UserProfileForm
-from profiles.models import UserProfile
+from profiles.models import ProfilePhoto, UserProfile
 
 
 def register(request):
@@ -35,6 +35,10 @@ def ProfileView(request):
             user = User.objects.get(id=request.user.id)
             user.first_name = form.cleaned_data.get('first_name')
             user.last_name = form.cleaned_data.get('last_name')
+            if 'profile_photos' in form.changed_data:   # FIXME: improve this verification to not delete/save every time
+                user_profile.profile_photos.all().delete() # clean up before save it all
+                for image in request.FILES.getlist('profile_photos'):
+                    ProfilePhoto.objects.create(image=image, user=user_profile)
             user.save()
             try:
                 form.save()
@@ -48,6 +52,7 @@ def ProfileView(request):
     # make data accessible to the html template
     context = {
         'user_profile': user_profile,
+        'profile_photos': list(user_profile.profile_photos.all()),
         'form': form,
     }
     return render(request, 'profile.html', context)

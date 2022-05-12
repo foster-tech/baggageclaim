@@ -14,7 +14,10 @@
         <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet" />
         <style>
             .filepond--item {
-                width: calc(50% - 0.5em);
+                /* CAREFUL: the height is based on the first element when width is defined */
+                /* width: calc(50% - 0.5em);
+            }
+            .filepond--root {
             }
         </style>
     </head>
@@ -116,9 +119,8 @@
 
                             <div class="style451 col-md-9 col-lg-8 col-xl-6 col-sm-11">
                                 <img class="style205" src="{% static 'image/photo_prof3.png' %}">
-                                <input type="file" id="profile-photos" name="{{ form.user_avatar.name }}"/>
+                                <input type="file" id="profile-photos" name="profile_photos"/>
                             </div>
-                            
                             
                             <div class="w-auto h-auto col-lg-12 col-12" style='margin-top: 4em;'>
                                 <div class="form-group">
@@ -225,8 +227,10 @@
                     maxFiles: 10,
                     credits: null,
                     files: [
-                        "{{ form.instance.user_avatar.url }}",
-                    ],
+                        /*{% for photo in profile_photos %}*/
+                            'media/{{ photo.image }}',  // {# FIXME: use another attr to remove hard codded media/ #}
+                        /*{% endfor %}*/
+                    ]
                 });              
             });
         </script>
