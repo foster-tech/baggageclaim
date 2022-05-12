@@ -26,6 +26,7 @@ def register(request):
 def ProfileView(request):
     # get user profile
     user_profile = UserProfile.objects.get(user=request.user)
+    form = None
 
     if request.method == 'POST':
         # load form data
@@ -39,7 +40,7 @@ def ProfileView(request):
                 form.save()
             except IntegrityError as e: # Most likely this is due to the age restriction...
                 print(f'\033[1;31m{e}\033[m')
-    if request.method == 'GET':
+    elif request.method == 'GET':
         # create form with data from the database
         form = UserProfileForm(instance=user_profile)
 
