@@ -12,6 +12,11 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
         <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
         <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet" />
+        <style>
+            .filepond--item {
+                width: calc(50% - 0.5em);
+            }
+        </style>
     </head>
 
     <body is="dmx-app" id="free_profile">
@@ -214,7 +219,7 @@
                     // https://pqina.nl/filepond/docs/api/instance/properties/
                     required: true,
                     // TODO: Set allowMultiple property to true
-                    // allowMultiple: true,
+                    allowMultiple: true,
                     acceptedFileTypes: ['image/*'],
                     storeAsFile: true,
                     maxFiles: 10,
