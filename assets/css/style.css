@@ -43,6 +43,7 @@ body, html {
 
 .font-family-default {
 	font-family: 'Retrokia Caps Regular';
+	font-size: 12px;
 }
 
 /* Wappler generated */
@@ -1861,7 +1862,18 @@ body, html {
 	text-align: center;
 	padding-top: 213px;
 }
-.style294 {padding-top: 35px;
+.style294 {
+	padding-top: 35px;
+	
+}
+.warning{
+	width: 100%;
+	text-align: center;
+	color: #fdcd2e;
+	background: #fbda6c47;
+	margin-top: 4px;
+	margin-bottom: 21px;
+	font-family: 'Retrokia Caps Regular';
 }
 .style295 {background-color: #000;padding-top: 234px
 }
