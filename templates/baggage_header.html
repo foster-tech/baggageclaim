@@ -1,18 +1,23 @@
 {% load static %}
-<div class="container style166 h-auto w-auto">
+<div class="container style166 h-auto w-auto position-relative">
     <img src="{% static img %}" class="style242 mt-0">
-    <ul class="float-left position-absolute container nav nav-pills" style="top:250px;font-size:0.8rem">
-        <li class="nav-item border-right">
-          <a class="nav-link active pl-0 pt-0 pb-0 main-color" href="{% url 'claim1' %}">Baggage Claim 1</a>
-        </li>
-        <li class="nav-item border-right">
-          <a class="nav-link pt-0 pb-0 main-color" href="{% url 'claim2' %}">Baggage Claim 2</a>
-        </li>
-        <li class="nav-item border-right">
-          <a class="nav-link pt-0 pb-0 main-color" href="{% url 'claim3' %}">Baggage Claim 3</a>
-        </li>
+    
+    <div class="d-none d-lg-block">
+        <ul class="float-left position-absolute container nav nav-pills">
+          {% for i in "1234" %}
+          {% with path="claim"|add:i %}
+            <li class="nav-item {% if i != '4' %} border-right {% endif %} ">
+              <a class="nav-link {% if i == '1' %} pl-0 {% endif %} pt-0 pb-0" href='{% url path %}'>Baggage Claim {{ i }}</a>
+            </li>
+          {% endwith %}
+          {% endfor %}
+        </ul>
+    </div>
+    <div class="d-lg-none">
+      <ul class="float-left position-absolute container nav nav-pills">
         <li class="nav-item">
-          <a class="nav-link pt-0 pb-0 main-color"  href="{% url 'claim4' %}">Baggage Claim 4</a>
+          <a class="nav-link pl-0 pt-0 pb-0" href="{{ request.path }}">Baggage Claim {{ request.path|cut:"/"|make_list|last }} </a>
         </li>
       </ul>
+  </div>
 </div>
