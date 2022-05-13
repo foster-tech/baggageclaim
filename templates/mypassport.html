@@ -1,0 +1,37 @@
+<!doctype html>
+{% load static %}
+<html>
+    <head>
+        <base href="/">
+        <meta charset="UTF-8">
+        <title>My destination</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </head>
+
+    <body is="dmx-app" id="destination">
+
+        {% include "header.html" %}
+        {% block content %}
+
+        <section class="style166 pt-5 pb-5 container-fluid" style="background-image: url(&quot;../image/matches.jpg&quot;); background-color: #e6e8e7;">
+            <div class="style403 container">
+         
+                {% include "passport.html" with user=user_profile %}
+        
+            </div>
+            
+            <div class="col-12 text-center mt-lg-5 mt-md-5 mt-sm-5 mt-5">
+                <button class="btn style241" onclick="location.href='{% url 'profile' %}'" type="button">EDIT</button>
+                <button class="btn style241" onclick="location.href='{% url 'claim1' %}'" type="button">Go to Baggage Claim</button>
+            </div>
+        </section>
+        {% endblock %}
+        {% include "footer.html" %}
+        <script src="{% static 'bootstrap/4/js/popper.min.js' %}"></script>
+        <script src="{% static 'bootstrap/4/js/bootstrap.min.js' %}"></script>
+    </body>
+
+</html>

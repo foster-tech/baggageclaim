@@ -37,6 +37,7 @@ def ProfileView(request):
             user.save()
             try:
                 form.save()
+                return redirect('mypassport')
             except IntegrityError as e: # Most likely this is due to the age restriction...
                 print(f'\033[1;31m{e}\033[m')
     if request.method == 'GET':
@@ -49,3 +50,20 @@ def ProfileView(request):
         'form': form,
     }
     return render(request, 'profile.html', context)
+
+@login_required
+def PassportView(request):
+    # get user profile
+    user_profile = UserProfile.objects.get(user=request.user)
+
+    
+    if request.method == 'GET':
+        # create form with data from the database
+        form = UserProfileForm(instance=user_profile)
+
+    # make data accessible to the html template
+    context = {
+        'user_profile': user_profile,
+        'form': form,
+    }
+    return render(request, 'mypassport.html', context)

@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url
 from django.views.generic.base import TemplateView
-from profiles.views import ProfileView, register
+from profiles.views import ProfileView, register, PassportView
 from claims.views import ClaimView, Claim1View, Claim2View, Claim3View, Claim4View
 from app.views import DestinationView
 
@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
     url(r'concept/', TemplateView.as_view(template_name='concept.html'), name='concept'),
     url(r'profile/', ProfileView, name='profile'),
+    url(r'mypassport/', PassportView, name='mypassport'),
     url(r'destination/', DestinationView, name='destination'),
     url(r'coming_soon/',TemplateView.as_view(template_name='coming_soon.html'), name='coming_soon'),
 
