@@ -35,8 +35,9 @@ def Claim1View(request):
             user_profile.filled_claims = 1
             user_profile.save()
             return redirect('claim2')
-    # if GET method
-    form = Claim1Form(instance=claim)
+    else:
+        # if GET method
+        form = Claim1Form(instance=claim)
 
     # FIXME: temporary workaround to display numbers (form_numbers.Q1A, etc)
     form_numbers = { field[0]: i+1 for i, field in enumerate(form.fields.items()) }
@@ -60,9 +61,9 @@ def Claim2View(request):
             user_profile.filled_claims = 2
             user_profile.save()
             return redirect('claim3')
-    
-    # if GET method
-    form = Claim2Form(instance=claim)
+    else:
+        # if GET method
+        form = Claim2Form(instance=claim)
 
     # FIXME: temporary workaround to display numbers (form_numbers.Q1A, etc)
     form_numbers = { field[0]: i+1 for i, field in enumerate(form.fields.items()) }
@@ -86,9 +87,9 @@ def Claim3View(request):
             user_profile.filled_claims = 3
             user_profile.save()
             return redirect('claim4')
-
-    # if GET method
-    form = Claim3Form(instance=claim)
+    else:
+        # if GET method
+        form = Claim3Form(instance=claim)
 
     # FIXME: temporary workaround to display numbers (form_numbers.Q1A, etc)
     form_numbers = { field[0]: i+1 for i, field in enumerate(form.fields.items()) }
@@ -112,9 +113,9 @@ def Claim4View(request):
             user_profile.filled_claims = 4
             user_profile.save()
             return redirect('claim')
-
-    # if GET method
-    form = Claim4Form(instance=claim)
+    else:
+        # if GET method
+        form = Claim4Form(instance=claim)
 
     # FIXME: temporary workaround to display numbers (form_numbers.Q1A, etc)
     form_numbers = { field[0]: i+1 for i, field in enumerate(form.fields.items()) }

@@ -1,0 +1,41 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-body">
+            Are you sure you want to continue without filling all the questions?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-confirm="#claim1">Yes</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(window).on('load',function(){
+        window.Parsley.on('field:error', function() {
+            this.$element.closest("ul").closest("li").children("legend").first().toggleClass("text-danger", true )
+        });
+        window.Parsley.on('field:success', function() {
+            this.$element.closest("ul").closest("li").children("legend").first().toggleClass("text-danger", false )
+        });
+        window.Parsley.on('form:validate', function() {
+            var success = $('.parsley-error').length === 0;
+            $('.callout-error').toggleClass('d-none', !success);
+        });
+        $('.modal button[data-confirm]').on('click', function(e) {
+            $($(e.target).data("confirm")).attr("novalidate","")
+            $("form").submit()
+        })
+        $('.modal').on('hidden.bs.modal', function (e) {
+            $(".submit").click()
+        })
+        $('.confirm').on('click', function(e) {
+            if(!$("form.validate")[0].checkValidity()){ 
+                $('.modal').modal('show');
+            } else {
+                $(".submit").click();
+            }
+        })
+    });
+</script>
