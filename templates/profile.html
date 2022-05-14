@@ -6,10 +6,12 @@
         <base href="/">
         <meta charset="UTF-8">
         <title>Profile</title>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+        <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet" />
     </head>
 
     <body is="dmx-app" id="free_profile">
@@ -25,16 +27,21 @@
             <div class="container style165">
                 <div class="row">
                     <div class="col">
-
                         {{ form.non_field_errors }}
 
-                        <form id="form1" method="post">
+                        {% if form.errors %}
+                            <div class="alert alert-warning" role="alert">
+                                Something went wrong, check the fields and try again.
+                            </div>
+                        {% endif %}
+
+                        <form id="form1" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
 
                             {% if user_profile.stamp_count %}
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="input23" >Select at most <b>two</b> stamps to show on your passport:</label>
+                                    <label for="input23">Select at most <b>two</b> stamps to show on your passport:</label>
                                     {{ form.selected_stamps }}
                                 </div>
                             </div>
@@ -50,13 +57,13 @@
 
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="input23" >First Name</label>
+                                    <label for="input23">First Name</label>
                                     {{ form.first_name }}
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="input23" >Last Name</label>
+                                    <label for="input23">Last Name</label>
                                     {{ form.last_name }}
                                 </div>
                             </div>
@@ -101,9 +108,10 @@
                                     {{ form.education }}
                                 </div>
                             </div>
+
                             <div class="style451 col-md-9 col-lg-8 col-xl-6 col-sm-11">
                                 <img class="style205" src="{% static 'image/photo_prof3.png' %}">
-                                {{ form.user_avatar }}
+                                <input type="file" id="profile-photos" name="{{ form.user_avatar.name }}"/>
                             </div>
                             
                             
@@ -128,45 +136,44 @@
                                 </div>
                             </div>
                             <div class="col-12">
-
-                                <p style="style177">Now is your chance to share more about what makes you unique:</p>
+                                <p class="style177">Now is your chance to share more about what makes you unique:</p>
                                 <div class="form-group">
-                                    <label for="input18" >1. The best things about being in a relationship with me are:</label>
+                                    <label for="input18">1. The best things about being in a relationship with me are:</label>
                                     {{ form.question1 }}
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="input19" >2. An ideal relationship consists of:</label>
+                                    <label for="input19">2. An ideal relationship consists of:</label>
                                     {{ form.question2 }}
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="input20" >3. The qualities I find most irresistible are:</label>
+                                    <label for="input20">3. The qualities I find most irresistible are:</label>
                                     {{ form.question3 }}
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="input21" >4. I’m still single because:</label>
+                                    <label for="input21">4. I’m still single because:</label>
                                     {{ form.question4 }}
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="input22" >5. The things that give me the greatest joy are:</label>
+                                    <label for="input22">5. The things that give me the greatest joy are:</label>
                                     {{ form.question5 }}
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="input23" >6. The most important thing to know about me before we meet is:</label>
+                                    <label for="input23">6. The most important thing to know about me before we meet is:</label>
                                     {{ form.question6 }}
                                 </div>
                             </div>
                             <div class="text-right style199 col-lg-8 col-xl-9">
-                                <p style="" class="style198 text-center">You’re off to a great start! In order to continue, please answer all fields and go to baggage claim.</p>
+                                <p class="style198 text-center">You’re off to a great start! In order to continue, please answer all fields and go to baggage claim.</p>
                             </div>
                             
                             <div class="col-12 text-center mb-lg-5 mb-md-5 mb-sm-5 mb-5">
@@ -183,6 +190,41 @@
         {% include "footer.html" %}
         <script src="{% static 'bootstrap/4/js/popper.min.js' %}"></script>
         <script src="{% static 'bootstrap/4/js/bootstrap.min.js' %}"></script>
+
+        <!-- FilePond library -->
+        <script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
+        <!-- FilePond plugins -->
+        <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
+        <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.min.js"></script>
+        <script src="https://unpkg.com/filepond-plugin-image-crop/dist/filepond-plugin-image-crop.js"></script>
+        <script src="https://unpkg.com/filepond-plugin-image-transform/dist/filepond-plugin-image-transform.js"></script>
+        <!-- FilePond jQuery adapter -->
+        <script src="https://unpkg.com/jquery-filepond/filepond.jquery.js"></script>
+        
+        <script>
+            $(function(){
+                // First register any plugins
+                $.fn.filepond.registerPlugin(FilePondPluginFileValidateType);
+                $.fn.filepond.registerPlugin(FilePondPluginImagePreview);
+                $.fn.filepond.registerPlugin(FilePondPluginImageTransform);
+                $.fn.filepond.registerPlugin(FilePondPluginImageCrop);
+            
+                // Turn input element into a pond            
+                $('#profile-photos').filepond({
+                    // https://pqina.nl/filepond/docs/api/instance/properties/
+                    required: true,
+                    // TODO: Set allowMultiple property to true
+                    // allowMultiple: true,
+                    acceptedFileTypes: ['image/*'],
+                    storeAsFile: true,
+                    maxFiles: 10,
+                    credits: null,
+                    files: [
+                        "{{ form.instance.user_avatar.url }}",
+                    ],
+                });              
+            });
+        </script>
     </body>
 
 </html>

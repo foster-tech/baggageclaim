@@ -42,7 +42,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'profiles.apps.ProfilesConfig',
+    'profiles',
     'claims',
     'matches',
     'django.contrib.admin',
