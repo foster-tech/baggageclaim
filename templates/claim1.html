@@ -24,14 +24,14 @@
             {% include "baggage_header.html" with img="image/lifestyle.png" %}
             <div class="container">
                 <p>Some truths to remember before you begin:</p>
-                <p style=" font-size: 1rem;">Being honest and authentic with ourselves will attract an honest and authentic connection. There are no wrong answers.</p>
+                <p>Being honest and authentic with ourselves will attract an honest and authentic connection. There are no wrong answers.</p>
                 <p>Most baggage, if paired with the right match, is actually not so heavy. What once made your ex run, may very well make the right person stay.</p>
                 <p>You’re never too flawed for someone to love. There is someone for everyone.</p>
-                <p class="style294 mb-5">Complete Baggage Claims in order to get matches that are compatible with you. The more Claims you complete, the deeper of a connection you’ll find.</p>
+                <p class="warning mb-5">Complete Baggage Claims in order to get matches that are compatible with you. The more Claims you complete, the deeper of a connection you’ll find.</p>
 
                 <div class="row">
                     <div class="col">
-                        <h1 style="font-size: 28px;" class="style334">Baggage Claim 1: Lifestyle</h1>
+                        <h3 class="style334">Baggage Claim 1: Lifestyle</h3>
                     </div>
                     <form class="col-12 style204" method="post">
                         {% csrf_token %}
@@ -152,7 +152,7 @@
                             </ul>
                         </div>
                         <div class="col text-center style239">
-                            <a class="btn style241 active" href="{% url 'profile' %}">Back</a>
+                            <a class="btn style241 active" href="{% url 'mypassport' %}">Back</a>
                             <button class="btn style241 active" type="submit">Next</button>
                         </div>
                     </form>
