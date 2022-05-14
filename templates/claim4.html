@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <title>Baggage Claim 4 - Emotional</title>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="{% static 'js/parsley.min.js' %}"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
@@ -13,12 +14,16 @@
             ul > li {
                 list-style-type: none;
             }
+            .parsley-errors-list {
+                display: none;
+            }
         </style>
     </head>
 
     <body is="dmx-app" id="free_profile">
 
         {% include "header.html" %}
+        {% include "claim_modal.html" %}
         {% block content %}
         <section class="style167 font-family-default">
             {% include "baggage_header.html" with img="image/Emotional.png" %}
@@ -28,127 +33,131 @@
                     <div class="col">
                         <h1 style="font-size: 24px;">Baggage Claim 4: Emotional</h1>
                     </div>
-                    <form class="col-12 style204" method="post">
+                    <form class="col-12 style204 validate" data-parsley-validate="" method="post">
                         {% csrf_token %}
                         <div class="form-group">
                             <label for="input2" class="style177 mb-3">• In relationships (check all that apply):</label>
                             <ul>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q58A }}) I fear abandonment and I worry that my partner will leave me.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q58A.css_classes }}">{{ form_numbers.Q58A }}) I fear abandonment and I worry that my partner will leave me.</legend>
 							{{ form.Q58A}}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q59A }}) Divorced and bitter about it, but that doesn’t mean I still want my ex.***</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q59A.css_classes }}">{{ form_numbers.Q59A }}) Divorced and bitter about it, but that doesn’t mean I still want my ex.***</legend>
 							{{ form.Q59A}}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q60A  }}) Part of me is still in love with an ex or “the one who got away”, but finding the right person could help me move on.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q60A.css_classes }}">{{ form_numbers.Q60A }}) Part of me is still in love with an ex or “the one who got away”, but finding the right person could help me move on.</legend>
 							{{ form.Q60A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q61A  }}) Dealing with too much emotion and affection shuts me down. The intensity is overwhelming.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q61A.css_classes }}">{{ form_numbers.Q61A }}) Dealing with too much emotion and affection shuts me down. The intensity is overwhelming.</legend>
 							{{ form.Q61A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q62A  }}) I don’t like talking about emotions or being super affectionate. That’s over the top!</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q62A.css_classes }}">{{ form_numbers.Q62A }}) I don’t like talking about emotions or being super affectionate. That’s over the top!</legend>
 							{{ form.Q62A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q63A  }}) I need a lot of space because I get smothered easily and must recharge.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q63A.css_classes }}">{{ form_numbers.Q63A }}) I need a lot of space because I get smothered easily and must recharge.</legend>
 							{{ form.Q63A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q64A  }}) I easily get jealous and possessive.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q64A.css_classes }}">{{ form_numbers.Q64A }}) I easily get jealous and possessive.</legend>
 							{{ form.Q64A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q65A  }}) I feel the need to create drama in my relationships.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q65A.css_classes }}">{{ form_numbers.Q65A }}) I feel the need to create drama in my relationships.</legend>
 							{{ form.Q65A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q66A  }}) I hold grudges against my partner, even if I may not show it.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q66A.css_classes }}">{{ form_numbers.Q66A }}) I hold grudges against my partner, even if I may not show it.</legend>
 							{{ form.Q66A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q67A  }}) I can be revengeful if I feel that my partner has wronged me.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q67A.css_classes }}">{{ form_numbers.Q67A }}) I can be revengeful if I feel that my partner has wronged me.</legend>
 							{{ form.Q67A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q68A  }}) I believe my partner should be totally transparent with me about where they are and what’s in their phone. If they have nothing to hide, it shouldn’t be a problem!</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q68A.css_classes }}">{{ form_numbers.Q68A }}) I believe my partner should be totally transparent with me about where they are and what’s in their phone. If they have nothing to hide, it shouldn’t be a problem!</legend>
 							{{ form.Q68A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q69A  }}) I often keep big secrets from my partner.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q69A.css_classes }}">{{ form_numbers.Q69A }}) I often keep big secrets from my partner.</legend>
 							{{ form.Q69A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q70A  }}) I’m not okay with my partner having attractive friends of the same gender as me.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q70A.css_classes }}">{{ form_numbers.Q70A }}) I’m not okay with my partner having attractive friends of the same gender as me.</legend>
 							{{ form.Q70A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q71A  }}) I feel insecure about myself and need constant reassurance from my partner that I am attractive.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q71A.css_classes }}">{{ form_numbers.Q71A }}) I feel insecure about myself and need constant reassurance from my partner that I am attractive.</legend>
 							{{ form.Q71A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q72A  }}) It takes me a long time to trust and feel safe with a romantic partner. One could say I have very high walls up.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q72A.css_classes }}">{{ form_numbers.Q72A }}) It takes me a long time to trust and feel safe with a romantic partner. One could say I have very high walls up.</legend>
 							{{ form.Q72A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q73A  }}) I’m pretty suspicious with my romantic partners. They need to jump through hoops in order to gain my trust. You’re a liar until proven otherwise.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q73A.css_classes }}">{{ form_numbers.Q73A }}) I’m pretty suspicious with my romantic partners. They need to jump through hoops in order to gain my trust. You’re a liar until proven otherwise.</legend>
 							{{ form.Q73A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q74A  }}) I almost always break up or threaten to break up with my partner in the heat of the moment when I’m upset.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q74A.css_classes }}">{{ form_numbers.Q74A }}) I almost always break up or threaten to break up with my partner in the heat of the moment when I’m upset.</legend>
 							{{ form.Q74A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q75A  }}) Even with the little things, I find it very difficult to compromise when I feel that my way is better. It’s mostly either my way or the highway.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q75A.css_classes }}">{{ form_numbers.Q75A }}) Even with the little things, I find it very difficult to compromise when I feel that my way is better. It’s mostly either my way or the highway.</legend>
 							{{ form.Q75A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q76A  }}) I tend to put my partner’s needs before my own, even if it causes me to suffer.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q76A.css_classes }}">{{ form_numbers.Q76A }}) I tend to put my partner’s needs before my own, even if it causes me to suffer.</legend>
 							{{ form.Q76A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q77A  }}) I rarely check in with my partner to ask whether he/she is happy, needs anything from me or wishes anything were different about our relationship.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q77A.css_classes }}">{{ form_numbers.Q77A }}) I rarely check in with my partner to ask whether he/she is happy, needs anything from me or wishes anything were different about our relationship.</legend>
 							{{ form.Q77A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q78A  }}) I hold my potential partner to unrealistic standards. I tend to focus on shortcomings and ways that the person should improve.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q78A.css_classes }}">{{ form_numbers.Q78A }}) I hold my potential partner to unrealistic standards. I tend to focus on shortcomings and ways that the person should improve.</legend>
 							{{ form.Q78A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q78B  }}) I find any type of criticism hurtful and would expect my partner never to criticize anything about me.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q78B.css_classes }}">{{ form_numbers.Q78B }}) I find any type of criticism hurtful and would expect my partner never to criticize anything about me.</legend>
 							{{ form.Q78B }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q79A  }}) I often find myself feeling that romantic partners are not good enough for me or that I can do better.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q79A.css_classes }}">{{ form_numbers.Q79A }}) I often find myself feeling that romantic partners are not good enough for me or that I can do better.</legend>
 							{{ form.Q79A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q79B  }}) I often jump into relationships based on a strong physical connection and then get to know the other person better.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q79B.css_classes }}">{{ form_numbers.Q79B }}) I often jump into relationships based on a strong physical connection and then get to know the other person better.</legend>
 							{{ form.Q79B }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q80A  }}) When it comes to my personal development, I’m completely content with the way I am and I don’t plan to change anything about myself.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q80A.css_classes }}">{{ form_numbers.Q80A }}) When it comes to my personal development, I’m completely content with the way I am and I don’t plan to change anything about myself.</legend>
 							{{ form.Q80A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q81A  }}) I tend to take my stress and frustrations out on my partner.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q81A.css_classes }}">{{ form_numbers.Q81A }}) I tend to take my stress and frustrations out on my partner.</legend>
 							{{ form.Q81A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q81B  }}) I’m fiery and have a pretty short fuse; my temper can go from zero to sixty faster than a Lamborghini.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q81B.css_classes }}">{{ form_numbers.Q81B }}) I’m fiery and have a pretty short fuse; my temper can go from zero to sixty faster than a Lamborghini.</legend>
 							{{ form.Q81B }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q82A  }}) I rarely ever compliment my partner on his or her physical appearance. I just expect them to know that if I’m with them, I’m obviously attracted to them.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q82A.css_classes }}">{{ form_numbers.Q82A }}) I rarely ever compliment my partner on his or her physical appearance. I just expect them to know that if I’m with them, I’m obviously attracted to them.</legend>
 							{{ form.Q82A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q83A  }}) I don’t take accountability when I mess up and barely ever say sorry if I did something wrong to my partner.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q83A.css_classes }}">{{ form_numbers.Q83A }}) I don’t take accountability when I mess up and barely ever say sorry if I did something wrong to my partner.</legend>
 							{{ form.Q83A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q84A  }}) I often curse at my partner or call him/her hurtful names.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q84A.css_classes }}">{{ form_numbers.Q84A }}) I often curse at my partner or call him/her hurtful names.</legend>
 							{{ form.Q84A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q85A  }}) In a relationship, I tend to be a bit selfish and put my desires ahead of my partners’.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q85A.css_classes }}">{{ form_numbers.Q85A }}) In a relationship, I tend to be a bit selfish and put my desires ahead of my partners’.</legend>
 							{{ form.Q85A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q86A  }}) I often compete with my partner and enjoy the one-upmanship.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q86A.css_classes }}">{{ form_numbers.Q86A }}) I often compete with my partner and enjoy the one-upmanship.</legend>
 							{{ form.Q86A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q86B  }}) Being in control over most situations is extremely important to me and I don’t feel comfortable otherwise.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q86B.css_classes }}">{{ form_numbers.Q86B }}) Being in control over most situations is extremely important to me and I don’t feel comfortable otherwise.</legend>
 							{{ form.Q86B }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q87A  }}) I struggle with feelings of low self-esteem.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q87A.css_classes }}">{{ form_numbers.Q87A }}) I struggle with feelings of low self-esteem.</legend>
 							{{ form.Q87A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q87B  }}) I’m cocky and quite full of myself. It can be obnoxious at times.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q87B.css_classes }}">{{ form_numbers.Q87B }}) I’m cocky and quite full of myself. It can be obnoxious at times.</legend>
 							{{ form.Q87B }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q88A  }}) I am nitpicky and hypercritical of my romantic partner.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q88A.css_classes }}">{{ form_numbers.Q88A }}) I am nitpicky and hypercritical of my romantic partner.</legend>
 							{{ form.Q88A }}
 							</li>
-                            <li><legend class="col-form-label style461">{{ form_numbers.Q89A  }}) I have some inner demons, and this often affects my mood.</legend>
+                            <li><legend class="col-form-label style461 {{ form.Q89A.css_classes }}">{{ form_numbers.Q89A }}) I have some inner demons, and this often affects my mood.</legend>
 							{{ form.Q89A }}
 							</li>
                         </ul>
+                        <div class="callout-error text-center style199 w-100 p-lg-5 d-none">
+                            <p class="style198 text-center">You’re off to a great start! In order to continue, please answer the incomplete fields highlighted in red (*)</p>
+                        </div>
                         </div>
                         <div class="col text-center style250">
                             <a class="btn style241 active" href="{% url 'claim3' %}">Back</a>
-                            <button class="btn style241 active" type="submit">Submit</button>
+                            <button class="btn style241 active confirm" type="button">Submit</button>
+                            <button class="btn style241 active submit d-none" type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

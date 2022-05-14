@@ -33,7 +33,7 @@ class Claim1Form(forms.ModelForm):
             'Q26A',
             'Q27A',
             'Q28A']
-        widgets = {k: forms.RadioSelect() for k in
+        widgets = {k: forms.RadioSelect(attrs={"required": "required"}) for k in
             ['Q1A',
             'Q2A',
             'Q3A',
@@ -87,7 +87,7 @@ class Claim2Form(forms.ModelForm):
             'Q46B',
             'Q47A',
             'Q47B']
-        widgets = {k: forms.RadioSelect() for k in
+        widgets = {k: forms.RadioSelect(attrs={"required": "required"}) for k in
             ['Q29A',
             'Q30A',
             'Q31A',
@@ -126,7 +126,7 @@ class Claim3Form(forms.ModelForm):
             'Q55A',
             'Q56A',
             'Q57A']
-        widgets = {k: forms.RadioSelect() for k in
+        widgets = {k: forms.RadioSelect(attrs={"required": "required"}) for k in
             ['Q48A',
             'Q49A',
             'Q50A',
@@ -180,7 +180,7 @@ class Claim4Form(forms.ModelForm):
             'Q87B',
             'Q88A',
             'Q89A']
-        widgets = {k: forms.RadioSelect() for k in
+        widgets = {k: forms.RadioSelect(attrs={"required": "required"}) for k in
             ['Q58A',
             'Q59A',
             'Q60A',

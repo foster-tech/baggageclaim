@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <title>Baggage Claim 1 - Lifestyle</title>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="{% static 'js/parsley.min.js' %}"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
@@ -13,12 +14,15 @@
             ul > li {
                 list-style-type: none;
             }
+            .parsley-errors-list {
+                display: none;
+            }
         </style>
     </head>
 
     <body is="dmx-app" id="free_profile">
-
         {% include "header.html" %}
+        {% include "claim_modal.html" %}
         {% block content %}
         <section class="style167 w-auto font-family-default">
             {% include "baggage_header.html" with img="image/lifestyle.png" %}
@@ -33,127 +37,131 @@
                     <div class="col">
                         <h3 class="style334">Baggage Claim 1: Lifestyle</h3>
                     </div>
-                    <form class="col-12 style204" method="post">
+                    <form class="col-12 style204 validate" data-parsley-validate="" method="post">
                         {% csrf_token %}
 
                         <div class="form-group style454">
                             <ul>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q1A }}) My kids control my life. Good luck.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q1A.css_classes }}">{{ form_numbers.Q1A }}) My kids control my life. Good luck.</legend>
                                     {{ form.Q1A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q2A }}) I can’t go near children. I don’t ever want them - sorry for bursting your ideal family bubble.  </legend>
+                                    <legend class="col-form-label style459 {{ form.Q2A.css_classes }}">{{ form_numbers.Q2A }}) I can’t go near children. I don’t ever want them - sorry for bursting your ideal family bubble.  </legend>
                                     {{ form.Q2A }}
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q3A }}) I love kids, but don’t want any of my own. I could play step parent if need be.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q3A.css_classes }}">{{ form_numbers.Q3A }}) I love kids, but don’t want any of my own. I could play step parent if need be.</legend>
                                     {{ form.Q3A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q4A }}) I give my pet more attention than my partner.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q4A.css_classes }}">{{ form_numbers.Q4A }}) I give my pet more attention than my partner.</legend>
                                     {{ form.Q4A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q5A }}) I believe in ethical non-monogamy.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q5A.css_classes }}">{{ form_numbers.Q5A }}) I believe in ethical non-monogamy.</legend>
                                     {{ form.Q5A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q6A }}) I don’t believe in or want marriage and will never change my mind. No matter how much we love each other, no means no.  </legend>
+                                    <legend class="col-form-label style459 {{ form.Q6A.css_classes }}">{{ form_numbers.Q6A }}) I don’t believe in or want marriage and will never change my mind. No matter how much we love each other, no means no.  </legend>
                                     {{ form.Q6A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q7A }}) I’m a clean freak, classic Type A. I will truly be irritated if the house is not kept clean/organized.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q7A.css_classes }}">{{ form_numbers.Q7A }}) I’m a clean freak, classic Type A. I will truly be irritated if the house is not kept clean/organized.</legend>
                                     {{ form.Q7A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q8A }}) I’m extremely messy and I can’t change it, so don’t bother trying to train me.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q8A.css_classes }}">{{ form_numbers.Q8A }}) I’m extremely messy and I can’t change it, so don’t bother trying to train me.</legend>
                                     {{ form.Q8A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q9A }}) I’m not financially motivated because as long as my basic needs are met, I am content.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q9A.css_classes }}">{{ form_numbers.Q9A }}) I’m not financially motivated because as long as my basic needs are met, I am content.</legend>
                                     {{ form.Q9A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q10A }}) My partner will often feel that he/she has to compete with my friends for my attention and time.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q10A.css_classes }}">{{ form_numbers.Q10A }}) My partner will often feel that he/she has to compete with my friends for my attention and time.</legend>
                                     {{ form.Q10A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q11A }}) I enjoy doing non-legalized drugs recreationally.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q11A.css_classes }}">{{ form_numbers.Q11A }}) I enjoy doing non-legalized drugs recreationally.</legend>
                                     {{ form.Q11A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q12A }}) I enjoy doing non-legalized drugs often and it’s a big part of my life.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q12A.css_classes }}">{{ form_numbers.Q12A }}) I enjoy doing non-legalized drugs often and it’s a big part of my life.</legend>
                                     {{ form.Q12A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q13A }}) I am a cigarette smoker. The smell isn’t that bad, I promise!</legend>
+                                    <legend class="col-form-label style459 {{ form.Q13A.css_classes }}">{{ form_numbers.Q13A }}) I am a cigarette smoker. The smell isn’t that bad, I promise!</legend>
                                     {{ form.Q13A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q14A }}) I’m a messy eater and sometimes will lick the food off of my fingers.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q14A.css_classes }}">{{ form_numbers.Q14A }}) I’m a messy eater and sometimes will lick the food off of my fingers.</legend>
                                     {{ form.Q14A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q15A }}) I don’t put a lot of effort into my clothing. Comfort is key, and the rest is superficial stuff.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q15A.css_classes }}">{{ form_numbers.Q15A }}) I don’t put a lot of effort into my clothing. Comfort is key, and the rest is superficial stuff.</legend>
                                     {{ form.Q15A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q16A }}) When it comes to personal hygiene, I enjoy getting away with the minimum.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q16A.css_classes }}">{{ form_numbers.Q16A }}) When it comes to personal hygiene, I enjoy getting away with the minimum.</legend>
                                     {{ form.Q16A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q17A }}) I often prioritize video games, social media or tv in my free time.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q17A.css_classes }}">{{ form_numbers.Q17A }}) I often prioritize video games, social media or tv in my free time.</legend>
                                     {{ form.Q17A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q18A }}) I have a medical condition that I’m careful not to transmit to my sexual partners.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q18A.css_classes }}">{{ form_numbers.Q18A }}) I have a medical condition that I’m careful not to transmit to my sexual partners.</legend>
                                     {{ form.Q18A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q19A }}) I prioritize the opinion of my family. What they think about my relationship really impacts me.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q19A.css_classes }}">{{ form_numbers.Q19A }}) I prioritize the opinion of my family. What they think about my relationship really impacts me.</legend>
                                     {{ form.Q19A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q20A }}) You could say I’m a mama’s boy/daddy’s girl.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q20A.css_classes }}">{{ form_numbers.Q20A }}) You could say I’m a mama’s boy/daddy’s girl.</legend>
                                     {{ form.Q20A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q21A }}) My sex equipment down there is not known to be the biggest which has caused some sexual dissatisfaction in the past but I can compensate with technique.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q21A.css_classes }}">{{ form_numbers.Q21A }}) My sex equipment down there is not known to be the biggest which has caused some sexual dissatisfaction in the past but I can compensate with technique.</legend>
                                     {{ form.Q21A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q22A }}) I can’t date someone who is:</legend>
+                                    <legend class="col-form-label style459 {{ form.Q22A.css_classes }}">{{ form_numbers.Q22A }}) I can’t date someone who is:</legend>
                                     {{ form.Q22A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q23A }}) I am</legend>
+                                    <legend class="col-form-label style459 {{ form.Q23A.css_classes }}">{{ form_numbers.Q23A }}) I am</legend>
                                     {{ form.Q23A}}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q24A }}) When it comes to money, I’m frugal. Spending gives me anxiety.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q24A.css_classes }}">{{ form_numbers.Q24A }}) When it comes to money, I’m frugal. Spending gives me anxiety.</legend>
                                     {{ form.Q24A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q25A }}) When it comes to money, I’m too “spendy” and don’t have limits.</legend>
+                                    <legend class="col-form-label style459 {{ form.Q25A.css_classes }}">{{ form_numbers.Q25A }}) When it comes to money, I’m too “spendy” and don’t have limits.</legend>
                                     {{ form.Q25A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q26A }}) When it comes to pets, I’m picky. I’m not comfortable with (select all that apply):</legend>
+                                    <legend class="col-form-label style459 {{ form.Q26A.css_classes }}">{{ form_numbers.Q26A }}) When it comes to pets, I’m picky. I’m not comfortable with (select all that apply):</legend>
                                     {{ form.Q26A }}
                                 </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q27A }}) I typically eliminate romantic partners if their social or political views don’t align with mine and are any of the following (select all that apply):</legend>
-                                </li>
+                                    <legend class="col-form-label style459 {{ form.Q27A.css_classes }}">{{ form_numbers.Q27A }}) I typically eliminate romantic partners if their social or political views don’t align with mine and are any of the following (select all that apply):</legend>
                                     {{ form.Q27A }}
+                                </li>
                                 <li>
-                                    <legend class="col-form-label style459">{{ form_numbers.Q28A }}) My religious views get in the way of a relationship unless my partner shares the same views or decides to convert (check all that are acceptable).</legend>
+                                    <legend class="col-form-label style459 {{ form.Q28A.css_classes }}">{{ form_numbers.Q28A }}) My religious views get in the way of a relationship unless my partner shares the same views or decides to convert (check all that are acceptable).</legend>
                                     {{ form.Q28A }}
                                 </li>
                             </ul>
+                            <div class="callout-error text-center style199 w-100 p-lg-5 d-none">
+                                <p class="style198 text-center">You’re off to a great start! In order to continue, please answer the incomplete fields highlighted in red (*)</p>
+                            </div>
                         </div>
                         <div class="col text-center style239">
                             <a class="btn style241 active" href="{% url 'mypassport' %}">Back</a>
-                            <button class="btn style241 active" type="submit">Next</button>
+                            <button class="btn style241 active confirm" type="button">Next</button>
+                            <button class="btn style241 active submit d-none" type="submit">Next</button>
                         </div>
                     </form>
                 </div>
