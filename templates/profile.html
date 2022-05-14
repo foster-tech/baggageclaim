@@ -228,7 +228,7 @@
                     credits: null,
                     files: [
                         /*{% for photo in profile_photos %}*/
-                            'media/{{ photo.image }}',  // {# FIXME: use another attr to remove hard codded media/ #}
+                            '{{ photo.image.url }}',
                         /*{% endfor %}*/
                     ]
                 });              
