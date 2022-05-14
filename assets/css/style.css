@@ -19,6 +19,9 @@ body, html {
 	margin: 0;
 }
 
+.nav.nav-pills {
+	top: 60%;;font-size:0.8rem
+}
 .nav-item {
 	border-color: #55c0af !important;
 }
@@ -36,6 +39,11 @@ body, html {
 .nav-link:hover {
 	color: #55c0af;
 	text-decoration: underline;
+}
+
+.font-family-default {
+	font-family: 'Retrokia Caps Regular';
+	font-size: 12px;
 }
 
 /* Wappler generated */
@@ -1469,7 +1477,8 @@ body, html {
 .style198 {
 	width: 100%;
 	text-align: center;
-	color: #808285;
+	color: #fdcd2e;
+	background: #fbda6c47;
 	margin-top: 4px;
 	margin-bottom: 21px;
 	font-family: 'Retrokia Caps Regular';
@@ -1689,6 +1698,7 @@ body, html {
 	border-width: 0px;
 	background-color: #55c0af;
 	margin-bottom: 8px;
+	font-family: 'Retrokia Caps Regular';
 }
 .style242 {
 	margin-bottom: 46px;
@@ -1852,7 +1862,18 @@ body, html {
 	text-align: center;
 	padding-top: 213px;
 }
-.style294 {padding-top: 35px;
+.style294 {
+	padding-top: 35px;
+	
+}
+.warning{
+	width: 100%;
+	text-align: center;
+	color: #fdcd2e;
+	background: #fbda6c47;
+	margin-top: 4px;
+	margin-bottom: 21px;
+	font-family: 'Retrokia Caps Regular';
 }
 .style295 {background-color: #000;padding-top: 234px
 }
@@ -2051,7 +2072,7 @@ body, html {
 }
 .style428 {text-align: center;font-weight: bold
 }
-.style429 {text-align: justify;padding-top: 218px
+.style429 {text-align: justify;padding-top: 90px
 }
 .style430 {background-image: url("../image/linha.png");background-size: cover
 }
@@ -2095,5 +2116,5 @@ body, html {
 }
 .style460 {width: 100%
 }
-.style461 {padding-bottom: 1px
+.style461 {padding-bottom: 1px;
 }

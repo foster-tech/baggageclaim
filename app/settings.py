@@ -42,7 +42,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'profiles.apps.ProfilesConfig',
+    'profiles',
     'claims',
     'matches',
     'django.contrib.admin',
@@ -94,7 +94,7 @@ SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 
 LOGIN_URL = '/accounts/login/'
 LOGOUT_REDIRECT_URL = '/' # TODO check this
-LOGIN_REDIRECT_URL = '/profile' # TODO IS IT ?
+LOGIN_REDIRECT_URL = '/mypassport' # TODO IS IT ?
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
