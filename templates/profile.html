@@ -12,6 +12,14 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
         <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
         <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet" />
+        <style>
+            .filepond--item {
+                /* CAREFUL: the height is based on the first element when width is defined */
+                /* width: calc(50% - 0.5em);
+            }
+            .filepond--root {
+            }
+        </style>
     </head>
 
     <body is="dmx-app" id="free_profile">
@@ -111,9 +119,8 @@
 
                             <div class="style451 col-md-9 col-lg-8 col-xl-6 col-sm-11">
                                 <img class="style205" src="{% static 'image/photo_prof3.png' %}">
-                                <input type="file" id="profile-photos" name="{{ form.user_avatar.name }}"/>
+                                <input type="file" id="profile-photos" name="profile_photos"/>
                             </div>
-                            
                             
                             <div class="w-auto h-auto col-lg-12 col-12" style='margin-top: 4em;'>
                                 <div class="form-group">
@@ -214,14 +221,16 @@
                     // https://pqina.nl/filepond/docs/api/instance/properties/
                     required: true,
                     // TODO: Set allowMultiple property to true
-                    // allowMultiple: true,
+                    allowMultiple: true,
                     acceptedFileTypes: ['image/*'],
                     storeAsFile: true,
                     maxFiles: 10,
                     credits: null,
                     files: [
-                        "{{ form.instance.user_avatar.url }}",
-                    ],
+                        /*{% for photo in profile_photos %}*/
+                            '{{ photo.image.url }}',
+                        /*{% endfor %}*/
+                    ]
                 });              
             });
         </script>

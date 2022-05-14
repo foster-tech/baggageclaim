@@ -90,8 +90,6 @@ class UserProfile(models.Model):
 
     age = models.IntegerField(blank=True, null=True)
 
-    user_avatar = models.ImageField(upload_to="media/", blank=True, null=True)
-
     location_city = models.CharField(max_length=30, blank=True, null=True)
     location_state = models.CharField(max_length=30, blank=True, null=True)
     location_country = models.CharField(max_length=30, blank=True, null=True)
@@ -144,9 +142,21 @@ class UserProfile(models.Model):
                 check = (models.Q(age__gte = 18))
             )
         ]
+    
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
     instance.profile.save()
+
+
+class ProfilePhoto(models.Model):
+    user = models.ForeignKey(UserProfile, null=True, on_delete=models.CASCADE, related_name='profile_photos')
+    image = models.ImageField(upload_to='profile/', blank=False, null=True)
+    
+    def __str__(self):
+        return f"{self.pk} {self.user.first_name if self.user is not None else 'xxx'}"

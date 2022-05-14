@@ -1,9 +1,9 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+import heapq
 
 from profiles.models import UserProfile, Stamps
-import heapq
 
 
 class RegisterForm(UserCreationForm):
@@ -24,6 +24,8 @@ class UserProfileForm(forms.ModelForm):
             self.fields['selected_stamps'].choices = choices
             self.fields['selected_stamps'].widget.choices = choices
 
+    profile_photos = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
+
     class Meta:
         model = UserProfile
         fields = [
@@ -37,7 +39,7 @@ class UserProfileForm(forms.ModelForm):
             'location_state',
             'location_country',
             'education',
-            'user_avatar',
+            'profile_photos',
             'religion',
             'children',
             'destination',
@@ -46,7 +48,8 @@ class UserProfileForm(forms.ModelForm):
             'question3',
             'question4',
             'question5',
-            'question6']
+            'question6',
+        ]
         widgets = {
             'selected_stamps': forms.CheckboxSelectMultiple(attrs={'class': 'stamps-select'}),
             'gender': forms.RadioSelect(attrs={'class': 'radio-select gender'}),

@@ -50,8 +50,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
     'django_celery_results',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [
@@ -177,6 +180,7 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -200,4 +204,13 @@ LOGGING = {
             'propagate': True,
         },
     },
+}
+
+# https://github.com/klis87/django-cloudinary-storage#requirements
+# TODO: move it to environment variables
+# export CLOUDINARY_URL=cloudinary://172334557367673:Of7oEugE1ypVWXWoe1SaUTgtWWY@baggageclaimmatching
+CLOUDINARY_STORAGE = {
+  'CLOUD_NAME': "baggageclaimmatching",
+  'API_KEY': "172334557367673",
+  'API_SECRET': "Of7oEugE1ypVWXWoe1SaUTgtWWY",
 }
