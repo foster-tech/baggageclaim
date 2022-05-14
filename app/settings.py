@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_celery_results',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [

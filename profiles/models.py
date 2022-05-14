@@ -1,5 +1,4 @@
 # vi: foldmethod=marker
-import os
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
@@ -161,34 +160,3 @@ class ProfilePhoto(models.Model):
     
     def __str__(self):
         return f"{self.pk} {self.user.first_name if self.user is not None else 'xxx'}"
-
-
-@receiver(models.signals.post_delete, sender=ProfilePhoto)
-def auto_delete_file_on_delete(sender, instance, **kwargs):
-    """
-    Deletes file from filesystem
-    when corresponding `MediaFile` object is deleted.
-    """
-    if instance.image:
-        if os.path.isfile(instance.image.path):
-            os.remove(instance.image.path)
-
-@receiver(models.signals.pre_save, sender=ProfilePhoto)
-def auto_delete_file_on_change(sender, instance, **kwargs):
-    """
-    Deletes old file from filesystem
-    when corresponding `MediaFile` object is updated
-    with new file.
-    """
-    if not instance.pk:
-        return False
-
-    try:
-        old_file = ProfilePhoto.objects.get(pk=instance.pk).image
-    except ProfilePhoto.DoesNotExist:
-        return False
-
-    new_file = instance.image
-    if not old_file == new_file:
-        if os.path.isfile(old_file.path):
-            os.remove(old_file.path)
