@@ -3,6 +3,17 @@
 <html>
     <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <style>
+        :root {
+            --slick-height: 230px;
+        }
+        .slick-slide {
+            height: var(--slick-height);
+        }
+        .slick-slide img {
+            height: var(--slick-height);
+        }
+    </style>
 
     <body is="dmx-app" id="passport">
         <section>
@@ -22,8 +33,12 @@
                                 <p style="font-family: PT Serif; color: #616161;" class="style450 pb-lg-5 pl-lg-3 ml-5 pl-0">Stamps:&nbsp;{% for r in user.selected_stamps %}{{r}} {% endfor %}</p>
 
                             </div>
-                            <div class="col">
-                                <img src="{% static 'image/image-1.jpg' %}" class="mt-lg-5 pt-2">
+                            <div class="col-lg-5">
+                                <div class="carousel mt-lg-5 pt-2 pr-lg-4">
+                                    {% for photo in user.profile_photos.all %}
+                                        <div> <img src="{{ photo.image.url }}"> </div>
+                                    {% endfor %}
+                                </div>
                             </div>
                             <div class="col-10 offset-1">
                                 <p style="font-family: PT Serif; color: #616161;" class="style450 mt-0 pt-0 mt-lg-5 mb-lg-3 pt-lg-0 pl-lg-3">The best things about being in a relationship with me are: {{ user.question1 }}</p>
@@ -57,6 +72,21 @@
         </section>
         <script src="{% static 'bootstrap/4/js/popper.min.js' %}"></script>
         <script src="{% static 'bootstrap/4/js/bootstrap.min.js' %}"></script>
-    </body>
+        <script>
+            $(document).ready(function(){
+                $('.carousel').slick({
+                    autoplay: true,
+                    pauseOnHover: true,
+                    fade: true,
+                    cssEase: 'linear',
+                    slidesToShow: 1,
+                    infinite: true,
+                    centerMode: true,
+                    dots: true,
+                    mobileFirst: true,
+                });
+            });
+        </script>
+    </div>
 
 </html>

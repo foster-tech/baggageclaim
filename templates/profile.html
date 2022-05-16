@@ -15,7 +15,7 @@
         <style>
             .filepond--item {
                 /* CAREFUL: the height is based on the first element when width is defined */
-                /* width: calc(50% - 0.5em);
+                width: calc(50% - 0.5em);
             }
             .filepond--root {
             }
@@ -201,10 +201,12 @@
         <!-- FilePond library -->
         <script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
         <!-- FilePond plugins -->
-        <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
         <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.min.js"></script>
+        <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
         <script src="https://unpkg.com/filepond-plugin-image-crop/dist/filepond-plugin-image-crop.js"></script>
+        <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
         <script src="https://unpkg.com/filepond-plugin-image-transform/dist/filepond-plugin-image-transform.js"></script>
+        <!-- <script src="https://unpkg.com/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.min.js"></script> -->
         <!-- FilePond jQuery adapter -->
         <script src="https://unpkg.com/jquery-filepond/filepond.jquery.js"></script>
         
@@ -213,6 +215,8 @@
                 // First register any plugins
                 $.fn.filepond.registerPlugin(FilePondPluginFileValidateType);
                 $.fn.filepond.registerPlugin(FilePondPluginImagePreview);
+                $.fn.filepond.registerPlugin(FilePondPluginImageCrop);
+                $.fn.filepond.registerPlugin(FilePondPluginImageResize),
                 $.fn.filepond.registerPlugin(FilePondPluginImageTransform);
                 $.fn.filepond.registerPlugin(FilePondPluginImageCrop);
             
@@ -230,7 +234,13 @@
                         /*{% for photo in profile_photos %}*/
                             '{{ photo.image.url }}',
                         /*{% endfor %}*/
-                    ]
+                    ],
+                    allowImageEdit: true,
+                    imagePreviewHeight: 170,
+                    imageCropAspectRatio: '3:4',
+                    imageResizeTargetWidth: 600,
+                    imageResizeTargetHeight: 800,
+                    imageResizeMode: 'contain',
                 });              
             });
         </script>
