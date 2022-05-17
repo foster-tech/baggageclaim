@@ -13,6 +13,10 @@
         .slick-slide img {
             height: var(--slick-height);
         }
+        .answer-text {
+            font-family: "PT Serif";
+            color: #616161;
+        }
     </style>
 
     <body is="dmx-app" id="passport">
@@ -24,13 +28,13 @@
                             <div class="col-lg-7">
 
                                 <h1 style="font-family: Montserrat; font-size: 22px;" class="style449 mt-lg-5 pt-lg-0 pl-lg-3 ml-5 pl-3">{{ user.first_name }} {{ user.last_name }}</h1>
-                                <p style="font-family: PT Serif; color: #616161;" class="style450 mb-lg-0 pl-lg-3 ml-5 pl-5">{{ user.age }} • {{ user.gender }} • {{ user.sexual_orientation }}</p>
-                                <p style="font-family: PT Serif; color: #616161;" class="style450 pl-lg-3 ml-5">City {{ user.location_city }} • State {{ user.location_state }} • Country {{ user.location_country }}</p>
-                                <p style="font-family: PT Serif; color: #616161;" class="style450 pl-lg-3 ml-5">Education level&nbsp; {{ user.education }}</p>
-                                <p style="font-family: PT Serif; color: #616161;" class="style450 pl-lg-3 ml-5">Religion {% for r in user.religion %}{{r}} {% endfor %}</p>
-                                <p style="font-family: PT Serif; color: #616161;" class="style450 pl-lg-3 ml-5">Traveling alone?&nbsp; {% for r in user.children %}{{r}} {% endfor %}</p>
-                                <p style="font-family: PT Serif; color: #616161;" class="style450 pb-lg-5 pl-lg-3 ml-5 pl-0">Destination:&nbsp;{% for r in user.destination %}{{r}} {% endfor %}</p>
-                                <p style="font-family: PT Serif; color: #616161;" class="style450 pb-lg-5 pl-lg-3 ml-5 pl-0">Stamps:&nbsp;{% for r in user.selected_stamps %}{{r}} {% endfor %}</p>
+                                <p class="answer-text style450 mb-lg-0 pl-lg-3 ml-5 pl-5">{{ user.age }} • {{ user.get_gender_display }} • {{ user.get_sexual_orientation_display }}</p>
+                                <p class="answer-text style450 pl-lg-3 ml-5">City {{ user.location_city }} • State {{ user.location_state }} • Country {{ user.location_country }}</p>
+                                <p class="answer-text style450 pl-lg-3 ml-5">Education level&nbsp; {{ user.get_education_display }}</p>
+                                <p class="answer-text style450 pl-lg-3 ml-5">Religion {% for r in user.get_religion_display %}{{r}} {% endfor %}</p>
+                                <p class="answer-text style450 pl-lg-3 ml-5">Traveling alone?&nbsp; {% for r in user.get_children_display %}{{r}} {% endfor %}</p>
+                                <p class="answer-text style450 pb-lg-5 pl-lg-3 ml-5 pl-0">Destination:&nbsp;{% for r in user.get_destination_display %}{{r}} {% endfor %}</p>
+                                <p class="answer-text style450 pb-lg-5 pl-lg-3 ml-5 pl-0">Stamps:&nbsp;{% for r in user.get_selected_stamps_display %}{{r}} {% endfor %}</p>
 
                             </div>
                             <div class="col-lg-5">
@@ -41,12 +45,12 @@
                                 </div>
                             </div>
                             <div class="col-10 offset-1">
-                                <p style="font-family: PT Serif; color: #616161;" class="style450 mt-0 pt-0 mt-lg-5 mb-lg-3 pt-lg-0 pl-lg-3">The best things about being in a relationship with me are: {{ user.question1 }}</p>
-                                <p style="font-family: PT Serif; color: #616161;" class="style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">An ideal relationship consists of:&nbsp; {{ user.question2 }}</p>
-                                <p style="font-family: PT Serif; color: #616161;" class="style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">The qualities I find most irresistible are: {{ user.question3 }}</p>
-                                <p style="font-family: PT Serif; color: #616161;" class="style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">I’m still single because:&nbsp; {{ user.question4 }}</p>
-                                <p style="font-family: PT Serif; color: #616161;" class="style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3">The things that give me the greatest joy are:&nbsp; {{ user.question5 }}</p>
-                                <p style="font-family: PT Serif; color: #616161;" class="style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">The most important thing to know about me before we meet is: {{ user.question6 }}</p>
+                                <p class="answer-text style450 mt-0 pt-0 mt-lg-5 mb-lg-3 pt-lg-0 pl-lg-3">The best things about being in a relationship with me are: {{ user.question1 }}</p>
+                                <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">An ideal relationship consists of:&nbsp; {{ user.question2 }}</p>
+                                <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">The qualities I find most irresistible are: {{ user.question3 }}</p>
+                                <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">I’m still single because:&nbsp; {{ user.question4 }}</p>
+                                <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3">The things that give me the greatest joy are:&nbsp; {{ user.question5 }}</p>
+                                <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">The most important thing to know about me before we meet is: {{ user.question6 }}</p>
                             </div>
                         </div>
                     </div>
