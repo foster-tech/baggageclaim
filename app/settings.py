@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles', # this should be above cloudinary_storage
     'cloudinary_storage',
     'cloudinary',
     'django_celery_results',
@@ -88,7 +88,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'app.wsgi.application'
 
 # Celery Settings
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = os.environ.get('REDIS_URL', 'redis://localhost:6379/0')
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_IGNORE_RESULT = False
 # CELERY_TASK_TRACK_STARTED = True
@@ -192,15 +192,19 @@ LOGGING = {
     'disable_existing_loggers': False,
     'handlers': {
         'file': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.FileHandler',
             'filename': 'logs/baggageclaim.log',
         },
     },
+    'root': {
+        'handlers': ['file'],
+        'level': 'INFO',
+    },
     'loggers': {
         'django': {
             'handlers': ['file'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': True,
         },
     },
