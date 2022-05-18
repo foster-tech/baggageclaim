@@ -1,4 +1,5 @@
 # vi: foldmethod=marker
+from uuid import uuid4
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
@@ -153,10 +154,14 @@ def update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     instance.profile.save()
 
+def generate_random_name(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % (uuid4(), ext)
+    return 'profile/' + filename
 
 class ProfilePhoto(models.Model):
     user = models.ForeignKey(UserProfile, null=True, on_delete=models.CASCADE, related_name='profile_photos')
-    image = models.ImageField(upload_to='profile/', blank=False, null=True)
+    image = models.ImageField(upload_to=generate_random_name, blank=False, null=True)
     
     def __str__(self):
         return f"{self.pk} {self.user.first_name if self.user is not None else 'xxx'}"
