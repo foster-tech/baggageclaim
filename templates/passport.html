@@ -7,10 +7,10 @@
         :root {
             --slick-height: 230px;
         }
-        .slick-slide {
+        .profile-photos .slick-slide {
             height: var(--slick-height);
         }
-        .slick-slide img {
+        .profile-photos .slick-slide img {
             height: var(--slick-height);
         }
         .answer-text {
@@ -38,20 +38,43 @@
 
                             </div>
                             <div class="col-lg-5">
-                                <div class="carousel mt-lg-5 pt-2 pr-lg-4">
+                                <div class="profile-photos carousel mt-lg-5 pt-2 pr-lg-4">
                                     {% for photo in user.profile_photos.all %}
                                         <div> <img src="{{ photo.image.url }}"> </div>
                                     {% endfor %}
                                 </div>
                             </div>
                             <div class="col-10 offset-1">
-                                <p class="answer-text style450 mt-0 pt-0 mt-lg-5 mb-lg-3 pt-lg-0 pl-lg-3">The best things about being in a relationship with me are: {{ user.question1 }}</p>
-                                <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">An ideal relationship consists of:&nbsp; {{ user.question2 }}</p>
-                                <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">The qualities I find most irresistible are: {{ user.question3 }}</p>
-                                <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">I’m still single because:&nbsp; {{ user.question4 }}</p>
-                                <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3">The things that give me the greatest joy are:&nbsp; {{ user.question5 }}</p>
-                                <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">The most important thing to know about me before we meet is: {{ user.question6 }}</p>
+                                <div data-slick='{ "dots": false, "autoplay": false, "prevArrow": false, "nextArrow": ".next-info" }' class="carousel" >
+                                    <div>
+                                        <div class="d-block w-100 mt-3">
+                                            <div class="d-flex justify-content-center">
+                                                {% for stamp in stamps %}
+                                                    <div class="p-2">
+                                                        <img style="object-fit: scale-down; max-height: 150px"
+                                                        src="{% get_static_prefix %}image/claims/{{ stamp }}.png" class="img-fluid"> 
+                                                    </div> 
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-block w-100 overflow-auto mt-4">
+                                            <p class="answer-text style450 mt-0 pt-0 mt-lg-5 mb-lg-3 pt-lg-0 pl-lg-3">The best things about being in a relationship with me are: {{ user.question1 }}</p>
+                                            <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">An ideal relationship consists of:&nbsp; {{ user.question2 }}</p>
+                                            <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">The qualities I find most irresistible are: {{ user.question3 }}</p>
+                                            <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">I’m still single because:&nbsp; {{ user.question4 }}</p>
+                                            <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3">The things that give me the greatest joy are:&nbsp; {{ user.question5 }}</p>
+                                            <p class="answer-text style450 mt-lg-0 mb-lg-3 pt-lg-0 pl-lg-3 ml-0">The most important thing to know about me before we meet is: {{ user.question6 }}</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                        <div class="position-absolute fixed-bottom p-2">
+                            <div class="col-lg-6 offset-xl-6 col-xl-6 d-flex justify-content-end" style="bottom: -10px;">
+                                <a class="next-info text-dark" role="button">Click for more...</a>
+                            </div>  
                         </div>
                     </div>
                     <div class="style447 col-lg-2">
