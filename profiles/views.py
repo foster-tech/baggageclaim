@@ -60,8 +60,8 @@ def ProfileView(request):
 def PassportView(request):
     # get user profile
     user_profile = UserProfile.objects.get(user=request.user)
+    form = None
 
-    
     if request.method == 'GET':
         # create form with data from the database
         form = UserProfileForm(instance=user_profile)
