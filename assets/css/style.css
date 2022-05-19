@@ -15,7 +15,7 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 
 body, html {
-	/* font-family: 'Retrokia Caps Regular'; */
+	font-family: 'Montserrat';
 	margin: 0;
 }
 
@@ -300,7 +300,6 @@ body, html {
 	font-size: 18px;
 	padding-left: 90px;
 	padding-right: 667px;
-	font-family: 'PT Serif', serif;
 }
 .style69 {
 	padding-top: 0px;
@@ -320,7 +319,6 @@ body, html {
 	padding-left: 88px;
 	color: #fdcd2e;
 	text-decoration: underline;
-	font-family: 'PT Serif', serif;
 }
 .style4:active {
 	color: #fff;
@@ -457,7 +455,6 @@ body, html {
 	}
 	.style108 {
 		color: #bcbec0;
-		font-family: 'PT Serif', serif;
 		font-size: 16px;
 		margin-bottom: 0px;
 		margin-left: 28px;
@@ -617,22 +614,19 @@ body, html {
 		padding-right: 101px;
 	}
 	.style124 {
-		font-size: 16px;
-		font-family: PT serif;
+		font-size: 15px;
 		padding-left: 20px;
 		padding-right: 16px;
 		color: #8c8d8e;
 	}
 	.style125 {
-		font-size: 16px;
-		font-family: PT serif;
+		font-size: 15px;
 		padding-left: 20px;
 		padding-right: 5px;
 		color: #8c8d8e;
 	}
 	.style126 {
-		font-size: 16px;
-		font-family: PT serif;
+		font-size: 15px;
 		padding-left: 10px;
 		padding-right: 16px;
 		color: #8c8d8e;
@@ -788,8 +782,7 @@ body, html {
 		color: #bcbec0;
 	}
 	.style114 {
-		font-size: 16px;
-		font-family: 'PT Serif', serif;
+		font-size: 15px;
 		margin-top: 24px;
 		margin-right: 482px;
 		color: #bcbec0;
@@ -946,7 +939,14 @@ body, html {
 	}
 	.style437 {padding-top: 20px
 	}
-	.style446 {background-image: url("../image/passport.jpg");background-repeat: no-repeat;width: 514px;height: 772px;background-position: center;background-size: contain
+	.style446 {
+		background-image: url("../image/passport.jpg");
+		background-repeat: no-repeat;
+		width: 514px;
+		height: 772px;
+		background-position: center;
+		background-size: contain;
+		margin-bottom: 20px;
 	}
 	.style447 {width: 50%;text-align: center
 	}
@@ -954,7 +954,7 @@ body, html {
 	}
 	.style449 {font-weight: bold;margin-bottom: -1px
 	}
-	.style450 {font-style: italic;margin-bottom: 0px
+	.style450 {margin-bottom: 0px
 	}
 }
 @media (min-width: 1200px) {
@@ -1002,9 +1002,9 @@ body, html {
 	}
 	.style358 {height: 500px;background-size: cover
 	}
-	.style359 {color: #fff;font-family: PT Serif;font-size: 14px
+	.style359 {color: #fff;
 	}
-	.style360 {color: #f8f9fa;font-family: PT Serif;font-size:14px
+	.style360 {color: #f8f9fa;
 	}
 	.style361 {color: #55c0af;font-family: Montserrat;font-size: 14px
 	}
@@ -1154,7 +1154,7 @@ body, html {
 	margin-left: 14px;
 }
 .style120 {
-	font-size: 14px;
+	font-size: 13px;
 	color: #bcbec0;
 	margin-top: 11px;
 	margin-left: 14px;
@@ -1221,7 +1221,6 @@ body, html {
 }
 .style134 {
 	font-size: 16px;
-	font-family: PT serif;
 	color: #8c8d8e;
 }
 .style136 {
@@ -1230,7 +1229,6 @@ body, html {
 }
 .style137 {
 	font-size: 16px;
-	font-family: PT serif;
 	color: #8c8d8e;
 }
 .style138 {
@@ -1239,7 +1237,6 @@ body, html {
 }
 .style139 {
 	font-size: 16px;
-	font-family: PT serif;
 	color: #8c8d8e;
 }
 .style56 {
@@ -1376,7 +1373,6 @@ body, html {
 	background-color: rgba(0, 0, 0, 0);
 	display: inline;
 	color: #000;
-	font-family: PT serif;
 	outline-color: #000;
 	border-top-width: 0px;
 	border-left-width: 0px;
@@ -1394,7 +1390,6 @@ body, html {
 	padding-bottom: 0px;
 }
 .style172 {
-	font-family: PT serif;
 	width: 140px;display: inline-block;
 }
 .style173 {
@@ -1529,7 +1524,6 @@ body, html {
 }
 .style210 {
 	color: #d1d3d4;
-	font-family: PT Serif;
 	margin-right: 655px;
 	padding-top: 12px;
 }
@@ -1538,13 +1532,11 @@ body, html {
 }
 .style212 {
 	padding-top: 69px;
-	font-family: PT Serif;
 	text-align: center;
 }
 .style213 {
 	color: #15675a;
 	text-align: center;
-	font-family: PT Serif;
 }
 .style214 {
 	background-image: url("../image/maos.jpg");
@@ -1569,7 +1561,6 @@ body, html {
 }
 .style218 {
 	color: #bcbec0;
-	font-family: PT Serif;
 	margin-left: 100px;
 	margin-right: 100px;
 	padding-top: 54px;
@@ -1585,7 +1576,6 @@ body, html {
 	padding-top: 19px;
 }
 .style221 {
-	font-family: PT Serif;
 	color: #6c757d;
 	margin-left: 81px;
 	padding-top: 131px;
@@ -1643,7 +1633,6 @@ body, html {
 }
 .style231 {
 	color: #d1d3d4;
-	font-family: 'PT Serif';
 }
 .style232 {
 	height: 36px;
@@ -1654,7 +1643,6 @@ body, html {
 }
 .style233 {
 	color: #d1d3d4;
-	font-family: 'PT Serif';
 	padding-top: 28px;
 }
 .style234 {
@@ -2026,13 +2014,13 @@ body, html {
 }
 .Style398 {border-width: 0px 0px 1px;border-bottom-color: #6c757d;border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;background-color: rgba(0, 0, 0, 0);width: 225px
 }
-.style400 {color: #fff;font-family: PT Serif
+.style400 {color: #fff;
 }
 .style401 {padding-top: 194px
 }
 .style402 {margin-top: 14px;padding-top: 0px
 }
-.style403 {background-size: cover
+.style403 {background-size: cover; margin-bottom: 20px;
 }
 .style404 {width: 100%;margin-top: 0px;margin-bottom: 0px;padding-top: 0px
 }
@@ -2117,4 +2105,15 @@ body, html {
 .style460 {width: 100%
 }
 .style461 {padding-bottom: 1px;
+}
+
+.slick-prev, .slick-next{
+	height: 50px;
+	width: 50px;
+}
+.slick-prev {
+    left: -45px;
+}
+.slick-prev:before, .slick-next:before{
+	color: #55c0af;
 }

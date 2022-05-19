@@ -14,7 +14,6 @@
             height: var(--slick-height);
         }
         .answer-text {
-            font-family: "PT Serif";
             color: #616161;
         }
     </style>
@@ -26,7 +25,7 @@
                     <div class="style446 col-lg-7 offset-lg-1 offset-xl-3 col-xl-6">
                         <div class="row" style="min-height:380px">
                             <div class="col-lg-7">
-                                <h1 style="font-family: Montserrat; font-size: 22px;" class="style449 mt-lg-5 pt-lg-0 pl-lg-3 ml-5 pl-3">{{ user.first_name }} {{ user.last_name }}</h1>
+                                <h1 style="font-size: 22px;" class="style449 mt-lg-5 pt-lg-0 pl-lg-3 ml-5 pl-3">{{ user.first_name }} {{ user.last_name }}</h1>
                                 <p class="answer-text style450 mb-lg-0 pl-lg-3 ml-5 pl-5">{{ user.age }} • {{ user.get_gender_display }} • {{ user.get_sexual_orientation_display }}</p>
                                 <p class="answer-text style450 pl-lg-3 ml-5">City {{ user.location_city }} • State {{ user.location_state }} • Country {{ user.location_country }}</p>
                                 <p class="answer-text style450 pl-lg-3 ml-5">Education level&nbsp; {{ user.get_education_display }}</p>
@@ -37,7 +36,7 @@
                             <div class="col-lg-5">
                                 <div class="profile-photos carousel mt-lg-5 pt-2 pr-lg-4">
                                     {% for photo in user.profile_photos.all %}
-                                        <div> <img src="{{ photo.image.url }}"> </div>
+                                        <div> <img src="{{ photo.image.url }}" style="margin: auto;"> </div>
                                     {% endfor %}
                                 </div>
                             </div>
@@ -73,8 +72,8 @@
                             </div>
                         </div>
                         {% if user.selected_stamps %}
-                        <div class="position-absolute fixed-bottom p-2">
-                            <div class="col-lg-6 offset-xl-6 col-xl-6 d-flex justify-content-end" style="bottom: -10px;">
+                        <div class="position-absolute fixed-bottom p-4">
+                            <div class="col-lg-6 offset-xl-6 col-xl-6 d-flex justify-content-end">
                                 <a class="{{ index }}next-info text-dark font-family-default" role="button">Click for more...</a>
                             </div>  
                         </div>

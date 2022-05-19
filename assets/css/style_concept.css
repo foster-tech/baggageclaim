@@ -189,8 +189,8 @@ color: #6c757d
 }
 .style50 {
   text-align: center;
-  font-size: 18px;
-  font-family: 'PT Serif', serif;
+  font-size: 17px;
+  font-family: 'Montserrat', serif;
   color: #8c8d8e;
   line-height: 1.8;
   margin-bottom: 0px;
@@ -274,10 +274,10 @@ color: #6c757d
   padding: 65px 496px 11px 90px;
 }
 .style68 {
-  font-size: 18px;
+  font-size: 17px;
   padding-left: 90px;
   padding-right: 667px;
-  font-family: 'PT Serif', serif;
+  font-family: 'Montserrat', serif;
 }
 .style69 {
   padding-top: 0px;
@@ -297,7 +297,7 @@ color: #6c757d
   padding-left: 88px;
   color: #fdcd2e;
   text-decoration: underline;
-  font-family: 'PT Serif', serif;
+  font-family: 'Montserrat', serif;
 }
 .style4:active {
   color: #fff;
@@ -434,8 +434,8 @@ color: #6c757d
   }
 .style108 {
     color: #bcbec0;
-    font-family: 'PT Serif', serif;
-    font-size: 16px;
+    font-family: 'Montserrat', serif;
+    font-size: 15px;
     margin-bottom: 0px;
     margin-left: 28px;
     margin-right: 95px;
@@ -670,8 +670,8 @@ color: #6c757d
     color: #bcbec0;
   }
 .style114 {
-    font-size: 16px;
-    font-family: 'PT Serif', serif;
+    font-size: 15px;
+    font-family: 'Montserrat', serif;
     margin-top: 24px;
     margin-right: 482px;
     color: #bcbec0;
@@ -1154,7 +1154,7 @@ color: #6c757d
 .style168 {
 }
 .style169 {
-  font-family: PT serif;
+  font-family: Montserrat;
   color: d4d4f;
   margin-bottom: 0px;
 }
@@ -1163,7 +1163,7 @@ color: #6c757d
   background-color: rgba(0, 0, 0, 0);
   display: inline;
   color: #000;
-  font-family: PT serif;
+  font-family: Montserrat;
   outline-color: #000;
   border-top-width: 0px;
   border-left-width: 0px;
@@ -1181,7 +1181,7 @@ color: #6c757d
   padding-bottom: 0px;
 }
 .style172 {
-  font-family: PT serif;
+  font-family: Montserrat;
   width: 162px;display: inline-block;margin-left: 73px;
 }
 .style173 {
@@ -1202,7 +1202,7 @@ color: #6c757d
 }
 .style177 {
   display: inherit;
-  font-family: PT serif;
+  font-family: Montserrat;
 }
 .style178 {
   width: 450px;
@@ -1326,7 +1326,7 @@ color: #6c757d
 }
 .style210 {
   color: #d1d3d4;
-  font-family: PT Serif;
+  font-family: Montserrat;
   margin-right: 655px;
   padding-top: 12px;
 }
@@ -1335,13 +1335,13 @@ color: #6c757d
 }
 .style212 {
   padding-top: 69px;
-  font-family: PT Serif;
+  font-family: Montserrat;
   text-align: center;
 }
 .style213 {
   color: #15675a;
   text-align: center;
-  font-family: PT Serif;
+  font-family: Montserrat;
 }
 .style214 {
   background-image: url("../image/maos.jpg");
@@ -1365,7 +1365,7 @@ color: #6c757d
 }
 .style218 {
   color: #bcbec0;
-  font-family: PT Serif;
+  font-family: Montserrat;
   margin-left: 100px;
   margin-right: 100px;
   padding-top: 54px;
@@ -1381,7 +1381,7 @@ color: #6c757d
   padding-top: 19px;
 }
 .style221 {
-  font-family: PT Serif;
+  font-family: Montserrat;
   color: #6c757d;
   margin-left: 81px;
   padding-top: 131px;
@@ -1437,7 +1437,7 @@ color: #6c757d
 .style231 {
   color: #d1d3d4;
   text-align: right;
-  font-family: PT Serif;
+  font-family: Montserrat;
   padding-top: 0px;
   padding-bottom: 12px;
   padding-left: 226px;
@@ -1454,7 +1454,7 @@ color: #6c757d
 .style233 {
   text-align: right;
   color: #d1d3d4;
-  font-family: PT Serif;
+  font-family: Montserrat;
   padding-top: 28px;
   padding-left: 256px;
 }
