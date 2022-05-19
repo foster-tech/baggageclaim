@@ -24,9 +24,8 @@
             <div class="container">
                 <div class="row">
                     <div class="style446 col-lg-7 offset-lg-1 offset-xl-3 col-xl-6">
-                        <div class="row">
+                        <div class="row" style="min-height:380px">
                             <div class="col-lg-7">
-
                                 <h1 style="font-family: Montserrat; font-size: 22px;" class="style449 mt-lg-5 pt-lg-0 pl-lg-3 ml-5 pl-3">{{ user.first_name }} {{ user.last_name }}</h1>
                                 <p class="answer-text style450 mb-lg-0 pl-lg-3 ml-5 pl-5">{{ user.age }} • {{ user.get_gender_display }} • {{ user.get_sexual_orientation_display }}</p>
                                 <p class="answer-text style450 pl-lg-3 ml-5">City {{ user.location_city }} • State {{ user.location_state }} • Country {{ user.location_country }}</p>
@@ -34,8 +33,6 @@
                                 <p class="answer-text style450 pl-lg-3 ml-5">Religion {% for r in user.get_religion_display %}{{r}} {% endfor %}</p>
                                 <p class="answer-text style450 pl-lg-3 ml-5">Traveling alone?&nbsp; {% for r in user.get_children_display %}{{r}} {% endfor %}</p>
                                 <p class="answer-text style450 pb-lg-5 pl-lg-3 ml-5 pl-0">Destination:&nbsp;{% for r in user.get_destination_display %}{{r}} {% endfor %}</p>
-                                <p class="answer-text style450 pb-lg-5 pl-lg-3 ml-5 pl-0">Stamps:&nbsp;{% for r in user.get_selected_stamps_display %}{{r}} {% endfor %}</p>
-
                             </div>
                             <div class="col-lg-5">
                                 <div class="profile-photos carousel mt-lg-5 pt-2 pr-lg-4">
@@ -44,10 +41,13 @@
                                     {% endfor %}
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-10 offset-1">
                                 <div data-slick='{ "dots": false, "autoplay": false, "prevArrow": false, "nextArrow": ".next-info" }' class="carousel" >
+                                    {% if user.selected_stamps %}
                                     <div>
-                                        <div class="d-block w-100 mt-3">
+                                        <div class="d-block w-100 mt-4">
                                             <div class="d-flex justify-content-center">
                                                 {% for stamp in stamps %}
                                                     <div class="p-2">
@@ -58,6 +58,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    {% endif %}
                                     <div>
                                         <div class="d-block w-100 overflow-auto mt-4">
                                             <p class="answer-text style450 mt-lg-0 pt-0 mb-lg-3 pt-lg-0 pl-lg-3">The best things about being in a relationship with me are: {{ user.question1 }}</p>
@@ -71,11 +72,13 @@
                                 </div>
                             </div>
                         </div>
+                        {% if user.selected_stamps %}
                         <div class="position-absolute fixed-bottom p-2">
                             <div class="col-lg-6 offset-xl-6 col-xl-6 d-flex justify-content-end" style="bottom: -10px;">
                                 <a class="next-info text-dark font-family-default" role="button">Click for more...</a>
                             </div>  
                         </div>
+                        {% endif %}
                     </div>
                     <div class="style447 col-lg-2">
                         <div class="row">
