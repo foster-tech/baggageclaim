@@ -18,3 +18,6 @@ class Matches(models.Model):
 			models.UniqueConstraint(name='%(class)s_user_relation_unique',
 				fields=['user1', 'user2'])
 		]
+
+	def __str__(self):
+		return '{} <> {}'.format(self.user1, self.user2)
