@@ -6,7 +6,6 @@
         <meta charset="UTF-8">
         <title>Baggage Claim 1 - Lifestyle</title>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="{% static 'js/parsley.min.js' %}"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="{% static 'bootstrap/4/css/bootstrap.min.css' %}" />
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
@@ -161,7 +160,6 @@
                         <div class="col text-center style239">
                             <a class="btn style241 active" href="{% url 'mypassport' %}">Back</a>
                             <button class="btn style241 active confirm" type="button">Next</button>
-                            <button class="btn style241 active submit d-none" type="submit">Next</button>
                         </div>
                     </form>
                 </div>
@@ -172,5 +170,6 @@
         {% include "footer.html" %}
         <script src="{% static 'bootstrap/4/js/popper.min.js' %}"></script>
         <script src="{% static 'bootstrap/4/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/parsley.min.js' %}"></script>
     </body>
 </html>
