@@ -5,36 +5,40 @@
             Are you sure you want to continue without filling all the questions?
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-confirm="#claim1">Yes</button>
+            <button type="button" class="btn btn-secondary" data-confirm="form.validate">Yes</button>
             <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
         </div>
         </div>
     </div>
 </div>
 <script>
-    $(window).on('load',function(){
-        window.Parsley.on('field:error', function() {
+   $(function () {
+        $('form.validate').parsley().on('field:error', function() {
             this.$element.closest("ul").closest("li").children("legend").first().toggleClass("text-danger", true )
         });
-        window.Parsley.on('field:success', function() {
+        $('form.validate').parsley().on('field:success', function() {
             this.$element.closest("ul").closest("li").children("legend").first().toggleClass("text-danger", false )
         });
-        window.Parsley.on('form:validate', function() {
+        $('form.validate').parsley().on('form:validated', function() {
             var success = $('.parsley-error').length === 0;
-            $('.callout-error').toggleClass('d-none', !success);
+            $('.callout-error').toggleClass('d-none', success);
         });
         $('.modal button[data-confirm]').on('click', function(e) {
-            $($(e.target).data("confirm")).attr("novalidate","")
-            $("form").submit()
+            var form = $($(e.target).data("confirm"))
+            form.attr("no-validate","")
+            form.parsley().destroy()
+            form.submit()
         })
         $('.modal').on('hidden.bs.modal', function (e) {
-            $(".submit").click()
+            $("form").parsley().whenValidate()
         })
         $('.confirm').on('click', function(e) {
-            if(!$("form.validate")[0].checkValidity()){ 
-                $('.modal').modal('show');
+            var form = $(e.target).closest("form")
+            var success = form.parsley().isValid()
+            if(success){
+                form.submit()
             } else {
-                $(".submit").click();
+                $('.modal').modal('show');
             }
         })
     });
