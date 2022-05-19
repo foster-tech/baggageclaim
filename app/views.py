@@ -18,10 +18,11 @@ def DestinationView(request):
     for m in db_matches:
         other_profile = UserProfile.objects.get(user=m.user1) if m.user1 != request.user else UserProfile.objects.get(user=m.user2)
         fc = min(user_profile.filled_claims, other_profile.filled_claims)
+        stamps = [Stamps.labels[int(s)] for s in other_profile.selected_stamps]
         matches.append(
-            {'user': other_profile, 'match': get_match_level(m.value, fc)}
+            {'user': other_profile, 'match': get_match_level(m.value, fc), 'stamps': stamps}
                 if m.user1 != request.user
-                else {'user': other_profile, 'match': get_match_level(m.value_reverse, fc)})
+                else {'user': other_profile, 'match': get_match_level(m.value_reverse, fc), 'stamps': stamps})
 
     context = {'matches': matches }
 

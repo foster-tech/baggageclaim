@@ -44,7 +44,7 @@
                         </div>
                         <div class="row">
                             <div class="col-10 offset-1">
-                                <div data-slick='{ "dots": false, "autoplay": false, "prevArrow": false, "nextArrow": ".next-info" }' class="carousel" >
+                                <div data-slick='{ "dots": false, "autoplay": false, "prevArrow": false, "nextArrow": ".{{ index }}next-info" }' class="carousel" >
                                     {% if user.selected_stamps %}
                                     <div>
                                         <div class="d-block w-100 mt-4">
@@ -75,7 +75,7 @@
                         {% if user.selected_stamps %}
                         <div class="position-absolute fixed-bottom p-2">
                             <div class="col-lg-6 offset-xl-6 col-xl-6 d-flex justify-content-end" style="bottom: -10px;">
-                                <a class="next-info text-dark font-family-default" role="button">Click for more...</a>
+                                <a class="{{ index }}next-info text-dark font-family-default" role="button">Click for more...</a>
                             </div>  
                         </div>
                         {% endif %}

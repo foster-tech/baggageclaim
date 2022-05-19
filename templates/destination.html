@@ -21,7 +21,7 @@
         <section class="style166 pt-5 pb-5 container-fluid" style="background-image: url(&quot;../image/matches.jpg&quot;); background-color: #e6e8e7;">
             <div class="style403 container">
                 {% for m in matches %}
-                    {% include "passport.html" with user=m.user match=m.match %}
+                    {% include "passport.html" with user=m.user match=m.match stamps=m.stamps index=forloop.counter %}
                 {% endfor %}
             </div>
         </section>
