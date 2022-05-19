@@ -4,9 +4,8 @@ from django.contrib.auth.models import User
 from django.db.utils import IntegrityError
 from django.shortcuts import redirect, render
 
-from profiles.forms import RegisterForm, UserProfileForm
+from profiles.forms import RegisterForm, UserProfileForm, Stamps
 from profiles.models import ProfilePhoto, UserProfile
-
 
 def register(request):
     if request.method == 'POST':
@@ -70,6 +69,7 @@ def PassportView(request):
     # make data accessible to the html template
     context = {
         'user_profile': user_profile,
+        'stamps': [Stamps.labels[int(s)] for s in user_profile.selected_stamps],
         'form': form,
     }
     return render(request, 'mypassport.html', context)
