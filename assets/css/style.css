@@ -6,12 +6,11 @@
 	font-style: normal;
 }
 
-
 .radio-select li:first-child {
 	display: none; /* hide the first option since it's the empty value */
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 
 body, html {
