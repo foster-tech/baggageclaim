@@ -29,9 +29,9 @@
                                 <p class="answer-text style450 mb-lg-0 pl-lg-3 ml-5 pl-5">{{ user.age }} • {{ user.get_gender_display }} • {{ user.get_sexual_orientation_display }}</p>
                                 <p class="answer-text style450 pl-lg-3 ml-5">City {{ user.location_city }} • State {{ user.location_state }} • Country {{ user.location_country }}</p>
                                 <p class="answer-text style450 pl-lg-3 ml-5">Education level&nbsp; {{ user.get_education_display }}</p>
-                                <p class="answer-text style450 pl-lg-3 ml-5">Religion {% for r in user.get_religion_display %}{{r}} {% endfor %}</p>
-                                <p class="answer-text style450 pl-lg-3 ml-5">Traveling alone?&nbsp; {% for r in user.get_children_display %}{{r}} {% endfor %}</p>
-                                <p class="answer-text style450 pb-lg-5 pl-lg-3 ml-5 pl-0">Destination:&nbsp;{% for r in user.get_destination_display %}{{r}} {% endfor %}</p>
+                                <p class="answer-text style450 pl-lg-3 ml-5">Religion {% for r in user.get_religion_display %}{{r}}{% endfor %}</p>
+                                <p class="answer-text style450 pl-lg-3 ml-5">Traveling alone?&nbsp; {% for r in user.get_children_display %}{{r}}{% endfor %}</p>
+                                <p class="answer-text style450 pb-lg-5 pl-lg-3 ml-5 pl-0">Destination:&nbsp;{% for r in user.get_destination_display %}{{r}}{% endfor %}</p>
                             </div>
                             <div class="col-lg-5">
                                 <div class="profile-photos carousel mt-lg-5 pt-2 pr-lg-4">
